@@ -1,0 +1,17 @@
+package aula09Ex2;
+
+public class Copo extends GeladoDecorator{
+	
+	private String sabor;
+	
+	public Copo(Gelado gelado) {
+		super(gelado);
+		this.sabor = null;
+	}
+
+	@Override
+	public void base(int numBolas) {
+		System.out.println(numBolas+" bolas de gelado de "+this.sabor+" em copo");
+	}
+	
+}

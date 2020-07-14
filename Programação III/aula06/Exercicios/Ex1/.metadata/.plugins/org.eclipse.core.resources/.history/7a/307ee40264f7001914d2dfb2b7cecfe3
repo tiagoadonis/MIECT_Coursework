@@ -1,0 +1,15 @@
+package aula06Ex1;
+
+public class Carne extends Alimento {
+	private Variedade var;
+	
+	public Carne(Variedade v, double prot, double cal, double pes) {
+		super (prot, cal, pes);
+		this.var = v;
+	}
+	
+	@Override
+	public String toString() {
+		return var.name()+" "+super.toString();
+	}
+}

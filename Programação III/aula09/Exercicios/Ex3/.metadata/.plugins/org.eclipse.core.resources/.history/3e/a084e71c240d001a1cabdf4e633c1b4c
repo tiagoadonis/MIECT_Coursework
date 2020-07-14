@@ -1,0 +1,22 @@
+package aula09Ex3;
+import java.util.*;
+
+public class ListaPessoas {
+	private List<Pessoa> pessoas = new ArrayList<>();
+	
+	public boolean addPessoa(Pessoa p) {
+		return pessoas.add(p);
+	}
+	
+	public boolean removePessoa(Pessoa p) {
+		return pessoas.remove(p);
+	}
+	
+	public int size() {
+		return pessoas.size();
+	}
+	
+	public Iterator iterator() {
+		return pessoas.iterator();
+	}
+}

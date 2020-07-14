@@ -1,0 +1,21 @@
+package aula03Ex03;
+import static java.lang.System.*;
+
+public class Carta {
+	private String tipo;
+	private static final String[] TIPOS_CARTAS = {"A", "B", "C", "D"};
+	
+	public Carta(String type) {
+		for(String str : TIPOS_CARTAS) {
+			if (str.equals(type)) {
+				this.tipo = type;
+			}
+		}
+		out.print("ERROR!! Tipo de carta inexistente");
+	}
+	
+	@Override
+	public String toString() {
+		return "Tipo da Carta: "+this.tipo;
+	}	
+}

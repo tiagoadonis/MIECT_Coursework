@@ -1,0 +1,51 @@
+package aula08Ex3;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class GameWindow {
+	public GameWindow() {
+		createGameWindow();
+	}
+	
+	public void createGameWindow() {
+		JFrame frame = new JFrame("Quem quer ser Milionário");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800,500);
+		frame.setLayout(new FlowLayout());
+		
+		JTextArea question = new JTextArea();
+		question.setEditable(false);
+		
+		/*JPanel content1 = (JPanel) frame.getContentPane();
+		content1.setBackground(Color.WHITE);
+		content1.setLayout(new BorderLayout());
+		
+		JTextArea textArea = new JTextArea("Zona das perguntas");
+		textArea.setEditable(false);
+		
+		JPanel content2 = (JPanel) frame.getContentPane();
+		content2.setBackground(Color.WHITE);
+		content2.setLayout(new FlowLayout());
+		
+		JButton button1 = new JButton("Ajuda Público");
+		JButton button2 = new JButton("Telefone");
+		JButton button3 = new JButton("50-50");
+		
+		content1.add(textArea,BorderLayout.LINE_END);
+		content1.add(content2, BorderLayout.PAGE_END);
+		content2.add(button1);
+		content2.add(button2);
+		content2.add(button3);
+		
+		frame.setContentPane(content1);
+		frame.setContentPane(content2);
+		frame.setVisible(true);*/
+	}
+}

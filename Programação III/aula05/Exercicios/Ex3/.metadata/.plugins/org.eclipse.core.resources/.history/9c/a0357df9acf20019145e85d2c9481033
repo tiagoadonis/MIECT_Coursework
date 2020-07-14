@@ -1,0 +1,14 @@
+package aula05Ex3;
+import java.util.*;
+import java.io.*;
+
+public class Agenda {
+	private ArrayList<Pessoa> agenda = new ArrayList<>();
+	
+	public void loadFromFile(String filename) throws IOException{
+		File f = new File(filename);
+		Scanner scf = new Scanner(f);
+		String format = scf.nextLine();
+		AgendaInterface agendaFormat = null;
+	}
+}

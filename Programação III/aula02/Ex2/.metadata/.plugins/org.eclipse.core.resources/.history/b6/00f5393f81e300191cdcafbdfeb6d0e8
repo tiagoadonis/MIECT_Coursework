@@ -1,0 +1,22 @@
+package aula02Ex2;
+import static java.lang.System.*;
+import java.util.*;
+import java.io.*;
+
+public class Game {
+	private char[][] grid;
+	private List<String> dict;
+	private List<String> result;
+	private final int N;
+	
+	public Game (String fileName) {
+		this.grid = new char [80] [80];
+		Scanner scf = null;
+		try {
+			scf = new Scanner(new File(fileName));
+		}catch (FileNotFoundException e) {
+			out.println("File \""+fileName+"\" does not exist!!");
+			exit(1);
+		}
+	}
+}

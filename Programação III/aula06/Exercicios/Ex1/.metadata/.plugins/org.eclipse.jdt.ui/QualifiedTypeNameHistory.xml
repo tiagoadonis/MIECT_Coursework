@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="aula06Ex1.Alimento"/>
+    <fullyQualifiedTypeName name="aula06Ex1.Legume"/>
+    <fullyQualifiedTypeName name="aula06Ex1.PratoDieta"/>
+    <fullyQualifiedTypeName name="aula06Ex1.AlimentoVegetariano"/>
+    <fullyQualifiedTypeName name="aula06Ex1.PratoVegetariano"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="aula06Ex1.DiaSemana"/>
+    <fullyQualifiedTypeName name="jdk.nashorn.internal.runtime.ListAdapter"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+</qualifiedTypeNameHistroy>

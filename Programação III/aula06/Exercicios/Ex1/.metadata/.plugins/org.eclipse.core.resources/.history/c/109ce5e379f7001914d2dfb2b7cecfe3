@@ -1,0 +1,43 @@
+package aula06Ex1;
+import java.util.*;
+
+public class Ementa {
+	private String nome;
+	private String local;
+	private final HashMap<DiaSemana, LinkedList<Prato>> listaPratos = new HashMap<>();
+	
+	public Ementa(String nome, String local) {
+		this.nome = nome;
+		this.local = local;
+	}
+	
+	public void addPrato(Prato prato, DiaSemana dia) {
+		if (listaPratos.containsKey(dia)) { 	
+			listaPratos.get(dia).add(prato);
+		}
+		else {
+			LinkedList<Prato> tmp = new LinkedList<>();
+			tmp.add(prato);
+			listaPratos.put(dia, tmp);
+		}
+	}
+	
+	public void removePrato(Prato prato) {
+		DiaSemana[] dias = new DiaSemana[listaPratos.keySet().size()];
+		listaPratos.keySet();
+	}
+
+	@Override
+	public String toString() {
+		String s = "";
+		DiaSemana[] sorted = listaPratos.keySet().toArray(new DiaSemana[0]);
+		Arrays.sort(sorted);
+		for(DiaSemana dia : sorted) {
+			LinkedList<Prato> list = listaPratos.get(dia);
+			for(Prato p : list.toArray(new Prato[0])) {
+				s += p.toString()+", dia "+dia+"\n";
+			}
+		}
+		return s;
+	}
+}

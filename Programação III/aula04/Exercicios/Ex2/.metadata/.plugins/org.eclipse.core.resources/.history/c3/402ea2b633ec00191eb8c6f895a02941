@@ -1,0 +1,26 @@
+package aula04Ex2;
+import java.util.*;
+
+public class ColecaoFiguras {
+	private List<Figura> figuras;
+	private static double areaTot = 0;
+	
+	public ColecaoFiguras(double maxArea) {
+		this.figuras = new ArrayList<>();
+	}
+	
+	public boolean addFigura(Figura f) {
+		return figuras.add(f);
+	}
+	
+	public boolean delFigura(Figura f) {
+		return figuras.remove(f);
+	}
+	
+	public double areaTotal() {
+		for (Figura f : figuras) {
+			this.areaTot = this. areaTot + f
+		}
+		return area;
+	}
+}

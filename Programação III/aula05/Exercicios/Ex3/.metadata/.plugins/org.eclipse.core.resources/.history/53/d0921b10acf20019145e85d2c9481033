@@ -1,0 +1,6 @@
+package aula05Ex3;
+import java.io.*s;
+
+public interface AgendaInterface {
+	public Pessoa[] readFromFile(String filename) throws IOException;
+}

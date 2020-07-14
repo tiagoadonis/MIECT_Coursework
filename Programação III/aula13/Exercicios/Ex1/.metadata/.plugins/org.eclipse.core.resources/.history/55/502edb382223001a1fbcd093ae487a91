@@ -1,0 +1,18 @@
+package aula13Ex1;
+
+public class Factory {
+	public static Localidade factory(TipoLocalidade tipo) {
+		if(tipo.name().equalsIgnoreCase("Cidade")) {
+			return new Localidade();
+		}
+		if (tipo.name().equalsIgnoreCase("Aldeia")) {
+			return new Localidade();
+		}
+		if (tipo.name().equalsIgnoreCase("Vila")) {
+			return new Localidade();
+		}
+		else {
+			throw new IllegalArgumentException("Localidade não existente");
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package aula02Ex2;
+import java.util.*;
+import java.io.*;
+
+public class Game {
+	private char[][] grid;
+	private List<String> dict;
+	private List<String> result;
+	private final int N;
+	
+	public Game (String fileName) {
+		this.grid = new char [80] [80]; 
+	}
+}

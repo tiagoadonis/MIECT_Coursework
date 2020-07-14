@@ -1,0 +1,20 @@
+package aula05Ex3;
+import java.util.*;
+import java.io.*;
+
+public class CSV implements AgendaInterface{
+	
+	public Pessoa[] readFromFile(String filename) throws IOException{
+		File f = new File(filename);
+		Scanner scf = new Scanner (f);
+		scf.nextLine();
+		ArrayList<Pessoa> pessoas = new ArrayList<>();
+		while(scf.hasNextLine()) {
+			String str = scf.nextLine().split("//t");
+		}
+	}
+	
+	public void writeToFile(String filename, Pessoa[] pessoas) throws IOException{
+		
+	}
+}

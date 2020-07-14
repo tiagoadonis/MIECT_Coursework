@@ -1,0 +1,10 @@
+package aula04Ex1;
+
+public class Professor extends Pessoa{
+	private int nfunc;
+	private Data dataAdmissao;
+	
+	public Professor(String nome, int cc, Data nascimento) {
+		
+	}
+}

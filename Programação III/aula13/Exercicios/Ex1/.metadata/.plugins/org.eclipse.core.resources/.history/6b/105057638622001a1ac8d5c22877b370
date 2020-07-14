@@ -1,0 +1,55 @@
+package aula13Ex1;
+import java.util.*;
+
+public class Pais extends Regiao{
+	private Localidade capital;
+	private ArrayList<Regiao> regioes;
+	
+	public Pais (String name, Localidade cap) {
+		super.setNome(name);
+		super.setPopulacao(cap.getPopulacao());
+		this.capital = cap;
+		this.regioes = new ArrayList<>();
+	}
+	
+	public Pais (String name) {
+		super.setNome(name);
+		super.setPopulacao(0);
+		// quando não é passada capital para o construtor -> imprimir *Indefinida* no toString
+		this.regioes = new ArrayList<>();
+	}
+	
+	public void addRegiao(Regiao r) { 
+		if (!this.regioes.contains(r)) {
+			this.regioes.add(r);
+			addPopulacao(r);
+		}
+	}
+	
+	public void addPopulacao(Regiao r) {
+		int pop = super.getPopulacao();
+		System.out.println("Populacao inicial: "+pop);
+		
+		if (!(r.getNome().equals(this.capital.getNome()))) {
+			for(Regiao tmp : this.regioes) {
+				if (!(r.getNome().equals(tmp.getNome()))) {
+					pop = pop + r.getPopulacao();
+				}
+			}
+		}
+		super.setPopulacao(pop);
+	}
+	
+	@Override
+	public String toString() {
+		String str = "Pais: "+super.getNome()+", População: "+super.getPopulacao()+" (Capital: Cidade ";
+		String cap = "";
+		if (this.capital != null) {
+			cap = cap + this.capital.getNome();
+		}
+		else {
+			cap = cap + "*Indefinida*";
+		}
+		return str + cap+", populacao "+this.capital.getPopulacao()+")";
+	}
+}

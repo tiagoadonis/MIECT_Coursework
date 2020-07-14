@@ -1,0 +1,22 @@
+package aula03Ex03;
+import static java.lang.System.*; 
+
+public class Test {
+
+	public static void main(String[] args) throws Exception{
+		// Cartas de Condução
+		Carta cartaMotas = new Carta("A");
+		Carta cartaLigeiros = new Carta("B");
+		Carta cartaMercadorias = new Carta("C");
+		Carta cartaPassageiros = new Carta("D");
+		
+		Data data5 = new Data(9,8,1998);
+		
+		//Condutores
+		Condutor condutorMota = new Condutor("Manuel", 14785467, new Data(1,2,1998), new Carta("A"));
+		Condutor condutorLigeiro = new Condutor("Miguel", 14345487, new Data(19,4,1997), new Carta("B"));
+		Condutor condutorMercadoria = new Condutor("Ana", 14725347, new Data(25,9,1970), new Carta("C"));
+		Condutor condutorPassageiro = new Condutor("Maria", 16786354, new Data(19,4,1990), new Carta("D"));
+	}
+
+}

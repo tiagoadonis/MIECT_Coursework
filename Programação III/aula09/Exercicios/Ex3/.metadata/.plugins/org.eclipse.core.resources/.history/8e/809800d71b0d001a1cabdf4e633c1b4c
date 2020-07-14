@@ -1,0 +1,27 @@
+package aula09Ex3;
+
+public class VectorPessoas {
+	private Pessoa[] listaPessoas;
+	private int size;
+	
+	public boolean addPessoa(Pessoa p) {
+		this.listaPessoas[size] = p;
+		this.size++;
+		return true;
+	}
+	
+	public boolean removePessoa(Pessoa p) {
+		int index = 0;
+		for (int i = 0; i < size; i++) {
+			if (listaPessoas[i] == p) {
+				index = i;
+			}
+		}
+		
+		return true;
+	}
+	
+	public int totalPessoas() {
+		return this.size;
+	}
+}

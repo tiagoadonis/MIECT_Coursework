@@ -1,0 +1,7 @@
+package aula13Ex1;
+
+public class Provincia extends Regiao{
+	private String nome;
+	private int populacao;
+	private String governador;
+}

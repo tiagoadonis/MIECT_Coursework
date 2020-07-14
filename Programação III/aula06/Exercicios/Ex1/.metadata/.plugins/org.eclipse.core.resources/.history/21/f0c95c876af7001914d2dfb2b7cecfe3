@@ -1,0 +1,15 @@
+package aula06Ex1;
+
+public class Peixe extends Alimento{
+	private Tipo type;
+	
+	public Peixe(Tipo t, double prot, double cal, double pe) {
+		super(prot,cal,pe);
+		this.type = t;
+	}
+	
+	@Override
+	public String toString() {
+		return "Peixe "+type.name()+" "+super.toString();
+	}
+}

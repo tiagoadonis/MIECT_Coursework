@@ -1,0 +1,12 @@
+package aula11_ex1_d;
+import java.util.*;
+import java.io.*;
+import java.nio.file.*;
+
+public class WordCounter {
+	private Map<String, Integer>  wordCount;
+	public int differentWords;
+	public int totalWords;
+	
+	
+}

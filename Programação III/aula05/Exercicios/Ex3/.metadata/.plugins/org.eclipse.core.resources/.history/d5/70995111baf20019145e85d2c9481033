@@ -1,0 +1,28 @@
+package aula05Ex3;
+import java.io.*;
+
+public class TestAgenda {
+
+	public static void main(String[] args) throws IOException{
+		
+		// Nokia
+		Agenda agenda = new Agenda();
+		agenda.loadFromFile("File1.txt");
+		System.out.println("A agenda tem "+agenda.numContacts()+" contactos");
+		agenda.agendaToString();
+		System.out.println();
+		agenda.addContact(new Pessoa("Daniel", 3456218, new Data(5,10,1999)));
+		System.out.println("A adicionar (agenda1): Daniel - 3456218 - 5/10/1999");
+		agenda.saveToFile("File1_1.txt", new Nokia());
+		agenda.agendaToString();
+		System.out.println();
+		
+		// vCard
+		Agenda agenda2 = new Agenda();
+		agenda2.loadFromFile("File2.txt");
+		System.out.println("A agenda2 tem "+agenda2.numContacts()+" contactos");
+		agenda2.agendaToString();
+		System.out.println();
+	}
+
+}

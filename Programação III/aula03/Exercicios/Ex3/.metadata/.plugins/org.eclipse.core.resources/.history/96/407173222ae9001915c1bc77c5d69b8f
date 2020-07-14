@@ -1,0 +1,10 @@
+package aula03Ex03;
+import java.util.*;
+
+public class PesadoMercadorias extends Veiculo{
+	private HashMap<String, Integer> mercadoria;
+	
+	public PesadoMercadorias() {
+		
+	}
+}

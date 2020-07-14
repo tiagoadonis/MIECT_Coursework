@@ -1,0 +1,9 @@
+package aula03Ex03;
+
+public class Veiculo {
+	private Condutor condutor;
+	private Carta cartaNecessaria;
+	private final double cilindrada;
+	private final double potencia;
+	private final double pesoBruto;
+}

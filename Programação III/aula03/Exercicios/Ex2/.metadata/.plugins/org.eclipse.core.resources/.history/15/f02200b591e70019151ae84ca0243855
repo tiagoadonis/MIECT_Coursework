@@ -1,0 +1,37 @@
+package aula03Ex2;
+
+public class Quadrado extends Figura{
+	private double lado;
+	private double area;
+	private double perimetro;
+	
+	public Quadrado (double l){
+		super(new Ponto());
+		this.lado = l;
+		this.area = l * l;
+		this.perimetro = 4 * l;
+	}
+	
+	public Quadrado(double x, double y, double l) {
+		super(new Ponto(x,y));
+		this.lado = l;
+		this.area = l * l;
+		this.perimetro = 4 * l;
+	}
+	
+	public Quadrado(Quadrado b) {
+		super(b.getCentro());
+		this.lado = b.getLado();
+	}
+	
+	public double getLado(){
+		return this.lado;
+	}
+	public double area(){
+		return this.area;
+	}
+	public double perimetro(){
+		return this.perimetro;
+	}
+	
+}

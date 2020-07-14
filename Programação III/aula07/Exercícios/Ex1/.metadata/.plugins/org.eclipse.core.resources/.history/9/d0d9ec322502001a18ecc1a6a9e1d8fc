@@ -1,0 +1,18 @@
+package aula07Ex1;
+import java.io.*;
+import java.util.*;
+
+public class Companhia {
+	private HashMap<String, String> companies;
+	
+	public Companhia(String fileName) throws IOException{
+		File f = new File(fileName);
+		Scanner scf = new Scanner(f);
+		scf.nextLine();
+		while(scf.hasNextLine()) {
+			String[] data = scf.nextLine().split("/t");
+			this.companies.put(data[0], data[1]);
+		}
+		scf.close();
+	}
+}

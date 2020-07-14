@@ -1,0 +1,9 @@
+package aula07Ex1;
+import java.time.LocalTime;
+
+public class Voo {
+		private LocalTime partida;
+		private Companhia companhia;
+		private String origem;
+		private LocalTime atraso; 	// default é 00:00
+}

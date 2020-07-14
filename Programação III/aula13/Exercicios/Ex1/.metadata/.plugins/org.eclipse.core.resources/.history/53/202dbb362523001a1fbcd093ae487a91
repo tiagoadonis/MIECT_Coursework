@@ -1,0 +1,21 @@
+package aula13Ex1;
+
+public class Estado extends Regiao{
+	private Localidade capital;
+	
+	public Estado(String name, int pop, Localidade local){
+		super.setNome(name);
+		super.setPopulacao(pop);
+		if (local.getTipo().equals("Cidade")) {
+			this.capital = local;
+		}
+		else {
+			System.out.println("ERROR!! A capital não é uma cidade");
+			System.exit(1);
+		}
+	}
+	
+	public Cidade getCapital() {
+		return capital;
+	}
+}

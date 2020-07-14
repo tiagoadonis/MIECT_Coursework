@@ -1,0 +1,49 @@
+package aula07Ex1;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class Voo {
+		private LocalTime partida;
+		private String nome; 
+		private Companhia companhia;
+		private String origem;
+		private LocalTime atraso; 	// default é 00:00
+		
+		public Voo(LocalTime partida, String nome, Companhia companhia, String origem, LocalTime atraso) {
+			this.partida = partida;
+			this.nome = nome;
+			this.companhia = companhia;
+			this.origem = origem;
+			this.atraso = atraso;
+		}
+		
+		/*public Voo(String fileName) throws IOException{
+			File f = new File(fileName);
+			Scanner scf = new Scanner(f);
+			scf.nextLine();
+			while(scf.hasNextLine()) {
+				String[] data = scf.nextLine().split("\t");
+				if (data.length == 4) {		// tem atraso
+					this.partida = LocalTime.parse(data[0], DateTimeFormatter.ofPattern("HH:mm"));
+					this.nome = data[1];
+					Companhia.companyName(data[1]);
+					this.origem = data[2];
+					this.atraso = LocalTime.parse(data[3], DateTimeFormatter.ofPattern("HH:mm"));
+				}else if (data.length == 3) {	// não tem atraso
+					this.partida = LocalTime.parse(data[0], DateTimeFormatter.ofPattern("HH:mm"));
+					this.nome = data[1];
+					this.companhia = Companhia.companyName(nome);
+					this.origem = data[2];
+					this.atraso = LocalTime.of(00, 00);
+				}
+			}
+			scf.close();
+		}
+
+		@Override
+		public String toString() {
+			return this.partida.toString()+"	"+this.nome+"	"+this.companhia+"	"+this.origem+"		"+this.atraso.toString();
+		}*/
+		
+		
+}

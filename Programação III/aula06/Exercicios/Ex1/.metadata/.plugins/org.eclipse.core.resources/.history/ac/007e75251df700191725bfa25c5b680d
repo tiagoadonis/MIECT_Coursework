@@ -1,0 +1,8 @@
+package aula06Ex1;
+
+public class Legume extends AlimentoVegetariano{
+	
+	public Legume(String nome, double prot, double calorias, double peso) {
+		super(nome,prot,calorias,peso);
+	}
+}

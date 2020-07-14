@@ -1,0 +1,15 @@
+package aula03Ex03;
+
+public class Veiculo {
+	private Condutor condutor;
+	private Carta cartaNecessaria;
+	privaye final int lotacao; 
+	private final double cilindrada;
+	private final double potencia;
+	private final double pesoBruto;
+	
+	public Veiculo(Condutor c, Carta carta, int lot, double col, double pot, double peso) {
+		this.condutor = c;
+		this.cartaNecessaria = carta;
+	}
+}

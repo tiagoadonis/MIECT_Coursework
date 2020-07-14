@@ -1,0 +1,8 @@
+package aula07Ex1;
+
+public class Voo {
+		private Hora partida;
+		private Companhia companhia;
+		private String origem;
+		private Hora atraso; // default é 00:00
+}

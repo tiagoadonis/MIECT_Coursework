@@ -1,0 +1,14 @@
+package aula04Ex1;
+import java.util.*;
+
+public class Disciplina {
+	private String nome;
+	private String area;
+	private int ECTS;
+	private Professor responsavel;
+	private List<Estudante> alunos;
+	
+	public Disciplina() {
+		this.alunos = new ArrayList<>();
+	}
+}

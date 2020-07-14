@@ -1,0 +1,14 @@
+package aula03Ex03;
+import static java.lang.System.*; 
+
+public class Test {
+
+	public static void main(String[] args) throws Exception{
+		// Cartas de Condução
+		Carta cartaMotas = new Carta("A");
+		Carta cartaLigeiros = new Carta("B");
+		Carta cartaMercadorias = new Carta("C");
+		Carta cartaPassageiros = new Carta("D");
+	}
+
+}

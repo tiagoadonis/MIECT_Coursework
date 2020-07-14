@@ -1,0 +1,15 @@
+package aula01Ex3;
+
+public class Quadrado {
+	private int lado;
+	private double area;
+	private double perimetro;
+	
+	public Quadrado (int lado) {
+		this.lado = lado;
+		area = lado * lado;
+		perimetro = 4 * lado;
+	}
+	
+	
+}

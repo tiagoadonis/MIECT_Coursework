@@ -1,0 +1,12 @@
+package aula06Ex1;
+
+public class Carne extends Alimento {
+	private Variedade var;
+	
+	public Carne(Variedade v, double prot, double cal, double pes) {
+		this.var = v;
+		this.proteinas = prot;
+		this.calorias = cal;
+		this.peso = pes;
+	}
+}

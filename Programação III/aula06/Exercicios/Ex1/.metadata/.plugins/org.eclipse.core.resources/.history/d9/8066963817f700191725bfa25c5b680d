@@ -1,0 +1,27 @@
+package aula06Ex1;
+
+public class Alimento {
+	private double proteinas;
+	private double calorias;
+	private double peso;
+	
+	public Alimento(double prot, double cal, double pes) {
+		this.proteinas = prot;
+		this.calorias = cal;
+		this.peso = pes;
+	}
+
+	public double getProteinas() {
+		return proteinas;
+	}
+
+	public double getCalorias() {
+		return calorias;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package aula07Ex1;
+import java.io.*;
+
+public class Companhia {
+	
+}

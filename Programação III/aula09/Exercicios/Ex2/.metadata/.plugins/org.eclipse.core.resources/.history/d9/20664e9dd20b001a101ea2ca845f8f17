@@ -1,0 +1,15 @@
+package aula09Ex2;
+
+public class Copo implements Gelado{
+	
+	private Gelado gelado;
+	
+	public Copo(Gelado gelado) {
+		this.gelado = gelado;
+	}
+	
+	@Override
+	public void base(int numBolas) {
+		System.out.println(numBolas+" bolas de ");
+	}
+}

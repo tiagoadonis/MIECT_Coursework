@@ -1,0 +1,9 @@
+package aula04Ex1;
+
+public class Disciplina {
+	private String nome;
+	private String area;
+	private int ECTS;
+	private Professor responsavel;
+	private Estudante[] alunos;
+}

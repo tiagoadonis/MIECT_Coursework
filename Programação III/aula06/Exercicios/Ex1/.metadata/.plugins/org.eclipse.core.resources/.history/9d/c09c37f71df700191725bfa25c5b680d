@@ -1,0 +1,7 @@
+package aula06Ex1;
+
+public class PratoVegetariano extends Prato{
+	public PratoVegetariano(String nome) {
+		super(nome);
+	}
+}

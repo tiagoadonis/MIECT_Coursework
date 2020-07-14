@@ -1,0 +1,23 @@
+package aula10Ex1;
+import java.util.*;
+
+public class ListaGeneric<T> {
+	private List<T> lista = new LinkedList<>();
+	
+	public boolean addPessoa(Pessoa p) {
+		return listaPessoas.add(p);
+	}
+	
+	public boolean removePessoa(Pessoa p) {
+		return listaPessoas.remove(p);
+	}
+	
+	public int totalPessoas() {
+		return listaPessoas.size();
+	}
+	
+	public Iterator iterator() {
+		ListaIterator iterator = new ListaIterator();
+		return iterator;
+	}
+}

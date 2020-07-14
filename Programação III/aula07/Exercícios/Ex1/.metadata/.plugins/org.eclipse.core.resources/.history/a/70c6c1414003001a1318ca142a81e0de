@@ -1,0 +1,51 @@
+package aula07Ex1;
+
+public class Companhia {
+	private String name;
+	private String company;
+	
+	public Companhia(String name, String company) {
+		this.name = name;
+		this.company = company;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getCompany() {
+		return this.company;
+	}
+	
+	/*private static HashMap<String, String> companies;
+	private String company;
+	
+	public Companhia(String fileName) throws IOException{
+		File f = new File(fileName);
+		Scanner scf = new Scanner(f);
+		scf.nextLine();
+		while(scf.hasNextLine()) {
+			String[] data = scf.nextLine().split("\t");
+			this.companies.put(data[0], data[1]);
+		}
+		scf.close();
+	}
+	
+	public static  void companyName(String name) {
+		String[] data = name.split(" ");
+		String str = "";
+		if (data.length == 2) {		// tem espaço no meio
+			str = companies.get(data[0]);
+		}else if(data.length == 1) {
+			String charOne = String.valueOf(data[0].charAt(0));
+			String charTwo = String.valueOf(data[0].charAt(1));
+			String subString = charOne + charTwo;
+			str = companies.get(subString);
+		}
+		this.company = str;
+	}
+	
+	public String getCompany() {
+		return this.company;
+	}*/
+}

@@ -1,0 +1,27 @@
+package aula07Ex1;
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	private HashMap<String, String> companies;
+	
+	public static void main(String[] args) throws IOException{
+		createCompanies("companhias.txt");
+		//Voo v1 = new Voo("test.txt");
+		/*System.out.println("Hora	Voo		Companhia 		Origem		Atraso");
+		String f = v1.toString();
+		System.out.println(f);*/
+	}
+	
+	public static void createCompanies(String fileName) throws IOException{
+		File f = new File(fileName);
+		Scanner scf = new Scanner(f);
+		scf.nextLine();
+		while(scf.hasNextLine()) {
+			String[] data = scf.nextLine().split("\t");
+			this.companies.put(data[0], data[1]);
+		}
+		scf.close();
+	}
+
+}

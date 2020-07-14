@@ -1,0 +1,21 @@
+package aula06Ex1;
+import static java.lang.System.*;
+
+public class PratoDieta extends Prato{
+	private double limCalorias;
+	
+	public PratoDieta(String nome, double limite) {
+		super(nome);
+		if(super.getCaloriasTotal() <= limite) {
+			this.limCalorias = limite;
+		}else {
+			out.print("ERROR!! Limite de calorias ultrapassado");
+			exit(1);
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+}

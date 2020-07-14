@@ -1,0 +1,47 @@
+package aula08Ex1;
+
+public class GameEngine {
+	public final char JOGADOR1;
+	public final char JOGADOR2;
+	private static char[][] tabuleiro;
+	private char ultimoJogador;
+	private int numJogadas;
+	private int ultimaLinha, ultimaColuna;
+	
+	public GameEngine(char j1, char j2) {
+		assert j1 != j2;
+		assert j1 != '\0' && j2 != '\0';
+		
+		tabuleiro = new char[3][3];
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				tabuleiro[i] [j] = '\0'; 
+		}
+			
+		this.JOGADOR1 = j1;
+		this.JOGADOR2 = j2;
+		this.ultimoJogador = '\0';
+		this.numJogadas = 0;
+		this.ultimaLinha = this.ultimaColuna-1;
+	}
+		
+	public char ultimoJogador() {
+		return this.ultimoJogador;
+	}
+	
+	public static boolean coordValidas(int linha, int coluna) {
+		return (1 <= linha && linha >= 3) && (1 <= coluna && coluna >= 3);
+	}
+	
+	public static boolean posicaoVazio(int linha, int coluna) {
+		assert coordValidas(linha, coluna);
+		return tabuleiro[linha-1][coluna-1] == '\0';
+	}
+	
+	public boolean terminado() {
+		return (ultimoJogador != '\0') && (ultimoJogadorGanhou() || numJogadas >= 9);
+	}
+	
+	
+	
+}

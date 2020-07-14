@@ -1,0 +1,18 @@
+package aula02Ex2;
+import java.util.*;
+import static java.lang.System.*;
+import java.io.*;
+
+public class WSSolver {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		out.print("Introduzar o nome do ficheiro a ler: ");
+		String str = sc.nextLine();
+		File f = new File (str);
+		Game game = new Game(f);
+		game.play();
+	}
+
+}

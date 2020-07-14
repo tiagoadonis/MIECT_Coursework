@@ -1,0 +1,14 @@
+package aula07Ex2;
+
+import java.io.File;
+
+public class Bitmap {
+	private BitmapFileHeader bitmapFileHeader;
+	private BitmapInfoHeader bitmapInfoHeader;
+	private byte[] rgbQuad;
+	private byte[] data;	//pixel data
+	
+	public Bitmap(File file) {
+		this(file.getAbsolutePath());
+	}
+}

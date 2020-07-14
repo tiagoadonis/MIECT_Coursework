@@ -1,0 +1,19 @@
+package aula03Ex2;
+
+public class Figura {
+	private Ponto centro;
+	
+	public Figura(Ponto centro) {
+		this.centro = centro;
+	}
+	
+	public Ponto getCentro() {
+		return this.centro;
+	}
+	
+	@Override
+	public String toString() {
+		return "Figura: \n"
+				+ "Centro: "+this.getCentro();
+	}
+}

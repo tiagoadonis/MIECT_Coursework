@@ -1,0 +1,299 @@
+package aula02Ex1;
+import java.util.*;
+import static java.lang.System.*;
+
+public class Menu {
+
+static Scanner sc = new Scanner (System.in);
+private static List<Cliente> users = new ArrayList<>(); 	// verificar senão dá erro por ser STATIC
+private static List<Video> videos = new ArrayList<>();
+	
+	public static void main(String[] args) {
+		
+		int opt = 0;
+		do {
+			out.print("Número máximo de requisições por cliente: ");
+			int n = sc.nextInt();
+			 sc.skip([\r,\n]);
+			out.println("");
+			String x = sc.nextLine();
+			out.println("1)-----Introduzir novo utilizador");
+			out.println("2)-----Remover utilizador existente");
+			out.println("3)-----Listar vídeos permitidos por utilizador");
+			out.println("4)-----Introduzir novo filme");
+			out.println("5)-----Remover filme");
+			out.println("6)-----Verificar disponibilidade de um fime");
+			out.println("7)-----Efetuar empréstimo de um filme (checkout)");
+			out.println("8)-----Efetuar devolução de um filme (checkin)");
+			out.println("9)-----Listar utilizadores por vídeo");
+			out.println("10)----Listar vídeos");
+			out.println("11)----Histórico de vídeos por cliente");
+			out.println("12)----Sair");
+			out.print("Opção: ");
+			opt = sc.nextInt();
+			
+			switch(opt) {
+				case 1:
+					addUser();
+					break;
+				case 2:
+					removeUser();
+					break;
+				case 3:
+					listUserVideos();
+					break;
+				case 4:
+					addVideo();
+					break;
+				case 5:
+					removeVideo();
+					break;
+				case 6:
+					checkAvailability();
+					break;
+				case 7:
+					lendVideo(n);
+					break;
+				case 8:
+					returnVideo();
+					break;
+				case 9:
+					listUseresByVideo();
+					break;
+				case 10:
+					listVideos();
+					break;
+				case 11:
+					historicVideosByClient();
+					break;
+				default:
+					out.print("ERROR!! Option number invalid!!");
+					break;
+			}
+		}while(opt != 12);
+	}
+	
+	public static void addUser() {
+		int opt = 0;
+		do {
+			out.println("1 - Estudante");
+			out.println("2 - Funcionário");
+			out.print("Opção: ");
+			opt = sc.nextInt();
+		} while (opt!=1 && opt!=2 );	
+		out.print(sc.hasNextLine());
+		if (opt == 1){
+			//Nome
+			out.print("Nome: ");				// ERRO NESTES PRINTS. PORQUE???????????
+			String nome = sc.nextLine();
+			//Cartão de cidadão
+			out.print("Cartão de cidadão: ");
+			int cc = sc.nextInt();
+			//Nascimento
+			out.print("Data de Nascimento(dd/mm/aaaa): ");
+			String str = sc.nextLine();
+			String[] data = str.split("/");
+			int dia = Integer.parseInt(data[0]);
+			int mes = Integer.parseInt(data[1]);
+			int ano = Integer.parseInt(data[2]);
+			Data nascimento = new Data (dia, mes, ano);
+			//Número Mecanográfico
+			out.print("NMEC: ");
+			int nmec = sc.nextInt();
+			//Curso
+			out.print("Curso: ");
+			String curso = sc.nextLine();
+			users.add(new Estudante(nome, cc, nascimento, nmec, curso));
+		}
+		else if (opt == 2){
+			//Nome
+			out.print("Nome: ");
+			String nome = sc.nextLine();
+			//Cartão de cidadão
+			out.print("Cartão de cidadão: ");
+			int cc = sc.nextInt();
+			//Nascimento
+			out.print("Data de Nascimento(dd/mm/aaaa): ");
+			String str = sc.nextLine();
+			String[] data = str.split("/");
+			int dia = Integer.parseInt(data[0]);
+			int mes = Integer.parseInt(data[1]);
+			int ano = Integer.parseInt(data[2]);
+			Data nascimento = new Data (dia, mes, ano);
+			//Número Funcionário
+			out.print("Número de Funcionário: ");
+			int numFuncionario = sc.nextInt();
+			//Número Fiscal
+			out.print("Número Fiscal: ");
+			int numFiscal = sc.nextInt();
+			users.add(new Funcionario(nome, cc, nascimento, numFuncionario, numFiscal));
+		}
+		out.println("Utilizador inserido com sucesso!!");
+	}
+	
+	public static void removeUser() {
+		out.print("Introduza o número de sócio do utilizador a remover: ");
+		int numSocio = sc.nextInt();
+		for(Cliente a : users) {
+			if (a.getNumSocio() == numSocio) {
+				users.remove(a);
+			}
+		}
+		out.println("Utilizador removido com sucesso!!");
+	}
+	
+	public static void listUserVideos(){
+		int idade = 0;
+		out.print("Introduza o número de sócio do utilizador: ");
+		int numSocio = sc.nextInt();
+		for (Cliente a : users) {
+			if (a.getNumSocio() == numSocio) {
+				int ano = a.getDataNascimento().getAno();
+				idade = 2019 - ano; 
+			}
+		}
+		if (idade > 6 && idade < 12) {
+			for (Video a : videos) {
+				if (a.getAge().equals("M6") || a.getAge().equals("ALL")){
+					a.toString();
+				}
+			}
+		}
+		else if (idade > 12 && idade < 16) {
+			for (Video a : videos) {
+				if (a.getAge().equals("M12") || a.getAge().equals("ALL")){
+					a.toString();
+				}
+			}
+		}
+		else if (idade > 16 && idade < 18) {
+			for (Video a : videos) {
+				if (a.getAge().equals("M16") || a.getAge().equals("ALL")){
+					a.toString();
+				}
+			}
+		}
+		else if (idade > 18) {
+			for (Video a : videos) {
+				if (a.getAge().equals("M18") || a.getAge().equals("ALL")){
+					a.toString();
+				}
+			}
+		}
+		else{
+			for (Video a : videos) {
+				if (a.getAge().equals("ALL")){
+					a.toString();
+				}
+			}
+		}
+	}
+	
+	public static void addVideo() {
+		//Título
+		out.print("Título: : ");
+		String titulo = sc.nextLine();
+		//Categoria
+		out.print("Categoria: ");
+		String categoria = sc.nextLine();
+		//Idade
+		out.print("Idade: ");
+		String idade = sc.nextLine();
+		videos.add(new Video (titulo, categoria, idade));
+		out.println("Vídeo adicionado com sucesso!!");
+	}
+	
+	public static void removeVideo() {
+		out.print("Introduza o ID do vídeo a remover: ");
+		int id = sc.nextInt();
+		for (Video a : videos) {
+			if (a.getID() == id) {
+				videos.remove(a);
+			}
+		}
+		out.println("Video removido com sucesso!!");
+	}
+	
+	public static void checkAvailability() {
+		out.print("Introduza o ID do vídeo: ");
+		int id = sc.nextInt();
+		for (Video a : videos) {
+			if (a.getID() == id) {
+				out.println(a.toString()+": "+a.getDisponibilidade()+" (disponibilidade)");
+			}
+		}
+	}
+	
+	public static void lendVideo(int n) {
+		out.print("Introduza o ID do vídeo: ");
+		int id = sc.nextInt();
+		out.print("Introduza o númro de sócio do requesitador: ");
+		int numSocio = sc.nextInt();
+		Cliente b = null;
+		for (Cliente a : users) {
+			if (a.getNumSocio() == numSocio) {
+				b = a;
+			}
+		}
+		int requesicoes = b.getReq();
+		requesicoes++;
+		if (requesicoes < n) {
+			for (Video a : videos) {
+				if (a.getID() == id) {
+					a.setDisponiblidade(false);
+					a.getUsersPerVideo().add(b);
+					b.getHistoricoVideos().add(a);
+				}
+			}
+		}
+		out.print("Checkout do video: "+id);
+	}
+	
+	public static void returnVideo(){
+		out.print("Introduza o ID do vídeo: ");
+		int id = sc.nextInt();
+		out.print("Rating (0-10): ");
+		int grade = sc.nextInt();
+		for (Video a : videos) {
+			if (a.getID() == id) {
+				a.setDisponiblidade(true);
+				a.setRatingTotal(grade);
+			}
+		}
+		out.print("Checkin do video: "+id);
+	}
+	
+	public static void listUseresByVideo() {
+		out.print("Introduza o ID do vídeo: ");
+		int id = sc.nextInt();
+		List<Cliente> list = null;
+		for (Video a : videos) {
+			if (a.getID() == id) {
+				list = a.getUsersPerVideo();
+			}
+		}
+		for(Cliente a : list) {
+			a.toString();
+		}
+	}
+	
+	public static void listVideos() {
+		for (Video a : videos) {
+			a.toString();
+		}
+	}
+	
+	public static void historicVideosByClient() {
+		out.print("Introduza o número de sócio do usuário: ");
+		int numSocio = sc.nextInt();
+		List<Video> lista = null;
+		for (Cliente a: users) {
+			if (a.getNumSocio() == numSocio) {
+				lista = a.getHistoricoVideos();
+			}
+		}
+		for (Video a : lista) {
+			a.toString();
+		}
+	}
+}

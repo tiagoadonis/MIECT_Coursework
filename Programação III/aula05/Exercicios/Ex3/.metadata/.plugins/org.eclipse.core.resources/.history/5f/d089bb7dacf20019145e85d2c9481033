@@ -1,0 +1,11 @@
+package aula05Ex3;
+import java.util.*;
+import java.io.*;
+
+public class Agenda {
+	private ArrayList<Pessoa> agenda = new ArrayList<>();
+	
+	public void loadFromFile(String filename) throws IOException{
+		
+	}
+}

@@ -1,0 +1,9 @@
+package aula06Ex1;
+
+public class Cereal extends Alimento implements AlimentoVegetariano{
+	private String nome;
+	
+	public Cereal(String nome, double prot, double cal, double peso) {
+		super();
+	}
+}

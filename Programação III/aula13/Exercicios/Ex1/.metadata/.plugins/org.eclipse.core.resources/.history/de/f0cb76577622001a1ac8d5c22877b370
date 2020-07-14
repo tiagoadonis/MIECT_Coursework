@@ -1,0 +1,15 @@
+package aula13Ex1;
+
+public class Estado {
+	private String nome;
+	private int populacao;
+	private Localidade capital;
+	
+	public Estado(String name, int pop, Localidade local){
+		this.nome = name;
+		this.populacao = pop;
+		if (local.getTipo().equals("Cidade")) {
+			this.capital = local;
+		}
+	}
+}

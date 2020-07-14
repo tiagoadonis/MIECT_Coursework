@@ -1,0 +1,6 @@
+package aula03Ex1;
+
+public class Estudante extends Pessoa{
+	private int NMEC;
+	private Data inscrição;
+}

@@ -1,0 +1,10 @@
+package aula03Ex03;
+
+public class Condutor extends Pessoa{
+	private Carta carta;
+	
+	public Condutor(String nome, int cc, Data nascimento, Carta carta) {
+		super(nome, cc, nascimento);
+		this.carta = carta;
+	}
+}

@@ -1,0 +1,17 @@
+package aula06Ex1;
+
+public class PratoDieta extends Prato{
+	private double limCalorias;
+	
+	public PratoDieta(String nome, double limite) {
+		super(nome);
+		if(super.getCaloriasTotal() <= limite) {
+			this.limCalorias = limite;
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+}

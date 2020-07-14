@@ -1,0 +1,23 @@
+package aula07Ex1;
+import java.time.LocalTime;
+
+public class Voo {
+	private LocalTime partida;
+	private String nome; 
+	private String companhia;
+	private String origem;
+	private LocalTime atraso; 	// default é 00:00
+	
+	public Voo(LocalTime partida, String nome, String companhia, String origem, LocalTime atraso) {
+		this.partida = partida;
+		this.nome = nome;
+		this.companhia = companhia;
+		this.origem = origem;
+		this.atraso = atraso;
+	}
+	
+	@Override
+	public String toString() {
+		return this.partida.toString()+"\t"+this.nome+"\t"+this.companhia+"\t"+this.origem+"\t"+"";
+	}
+}

@@ -1,0 +1,20 @@
+package aula07Ex1;
+import java.time.LocalTime;
+import java.io.*;
+import java.util.*;
+
+public class Voo {
+		private LocalTime partida;
+		private Companhia companhia;
+		private String origem;
+		private LocalTime atraso; 	// default é 00:00
+		
+		public Voo(String fileName) throws IOException{
+			File f = new File(fileName);
+			Scanner scf = new Scanner(f);
+			while(scf.hasNextLine()) {
+				
+			}
+			scf.close();
+		}
+}

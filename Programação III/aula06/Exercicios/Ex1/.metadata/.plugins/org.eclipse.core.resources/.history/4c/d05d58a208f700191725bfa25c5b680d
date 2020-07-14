@@ -1,0 +1,12 @@
+package aula06Ex1;
+import java.util.*;
+
+public class PratoVegetariano extends Prato{
+	private String nome;
+	private ArrayList<AlimentoVegetariano> alimentos;
+	
+	public PratoVegetariano(String nome) {
+		this.nome = nome;
+		alimentos = new ArrayList<>();
+	}
+}

@@ -1,0 +1,20 @@
+package aula05Ex3;
+import java.io.*;
+import java.util.*;
+
+public class Nokia implements AgendaInterface{
+	
+	public Pessoa[] readFromFile(String filename) throws IOException{
+		File f = new File(filename);
+		Scanner scf = new Scanner (f);
+		scf.nextLine();
+		ArrayList<Pessoa> pessoas = new ArrayList<>();
+		if (scf.hasNextLine()) {
+			
+		}
+	}
+	
+	public void writeToFile(String filename, Pessoa[] pessoas) throws IOEception{
+		
+	}
+}

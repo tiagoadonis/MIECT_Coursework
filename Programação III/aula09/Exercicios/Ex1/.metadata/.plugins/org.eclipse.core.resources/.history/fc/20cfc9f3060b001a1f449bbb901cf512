@@ -1,0 +1,39 @@
+package aula09Ex1;
+
+import java.io.*;
+import java.util.*;
+
+public class ScannerAbeirense implements Iterator<String>, Closeable{
+	
+	private Scanner read;
+	
+	public ScannerAbeirense(File f) {
+		try {
+			this.read = new Scanner (f);
+		} catch(IOException e) {
+			
+		}
+	}
+	
+	// Closeable
+	@Override
+	public void close() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	// Iterator
+	@Override
+	public boolean hasNext() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	// Iterator
+	@Override
+	public String next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

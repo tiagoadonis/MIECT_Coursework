@@ -1,0 +1,19 @@
+package aula04Ex1;
+
+public class Professor extends Pessoa{
+	private int nfunc;
+	private static int NFUNC = 1;
+	private Data dataAdmissao;
+	
+	public Professor(String nome, int cc, Data nascimento) {
+		super(nome, cc, nascimento);
+		this.nfunc = NFUNC++;
+		this.dataAdmissao = new Data();
+	}
+	
+	@Override
+	public String toString() {
+		return "PROFESSOR: "+super.getNome()+", BI: "+super.getCc()+", Nascido na Data: "+super.getNascimento()+
+				", NMec: "+this.nfunc+", ";
+	}
+}

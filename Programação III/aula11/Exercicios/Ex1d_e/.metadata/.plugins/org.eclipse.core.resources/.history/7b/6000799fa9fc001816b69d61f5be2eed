@@ -1,0 +1,26 @@
+package aula11_ex1_d;
+import java.util.*;
+import java.io.*;
+import java.nio.file.*;
+
+public class WordCounter {
+	private Map<String, Integer>  wordCount;
+	public int differentWords;
+	public int totalWords;
+	
+	public WordCounter(String filePath) throws IOException {
+		wordCount = new TreeMap<>();
+		readWords(filePath);
+		countWords(filePath);
+	}
+	
+	public void readWords(String filename) throws IOException {
+		List<String> lines = Files.readAllLines(Paths.get(filename));
+		lines.stream().flatMap(x -> Arrays.stream(x.split(" "))).forEach(word -> {
+			if(wordCount.containsKey(word))
+				wordCount.put(word,new Integer(wordCount.get(word)+1));
+			else
+				wordCount.put(word, new Integer(1));				
+		});
+	}
+}

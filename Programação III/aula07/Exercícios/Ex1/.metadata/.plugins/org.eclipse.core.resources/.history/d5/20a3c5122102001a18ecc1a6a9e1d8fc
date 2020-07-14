@@ -1,0 +1,16 @@
+package aula07Ex1;
+
+public class Hora {
+	private int hours;
+	private int minutes;
+	
+	public Hora(int h, int min) {
+		this.hours = h;
+		this.minutes = min;
+	}
+	
+	public Hora() {
+		this.hours = 00;
+		this.minutes = 00;
+	}
+}

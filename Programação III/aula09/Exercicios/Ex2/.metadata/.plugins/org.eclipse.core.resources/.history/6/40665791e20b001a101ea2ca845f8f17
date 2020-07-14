@@ -1,0 +1,13 @@
+package aula09Ex2;
+
+public class Cone extends GeladoDecorator{
+	
+	public Cone(Gelado gelado) {
+		super(gelado);
+	}
+	
+	public void base(int numBolas) {
+		System.out.println(numBolas+" bolas de gelado de "+this.sabor+" em cone");
+	}
+
+}

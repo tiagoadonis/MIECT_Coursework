@@ -1,0 +1,15 @@
+package aula06Ex1;
+
+public class Carne {
+	private Variedade var;
+	private double proteinas;
+	private double calorias;
+	private double peso;
+	
+	public Carne(Variedade v, double prot, double cal, double pes) {
+		this.var = v;
+		this.proteinas = prot;
+		this.calorias = cal;
+		this.peso = pes;
+	}
+}

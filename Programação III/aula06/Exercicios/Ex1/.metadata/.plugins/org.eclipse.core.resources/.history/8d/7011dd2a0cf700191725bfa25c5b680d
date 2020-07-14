@@ -1,0 +1,29 @@
+package aula06Ex1;
+import java.util.*;
+
+public class Prato {
+	private String nome;
+	private ArrayList<Alimento> alimentos;
+	private double calorias = 0;
+	
+	public Prato(String nome) {
+		this.nome = nome;
+		alimentos = new ArrayList<>();
+	}
+	
+	public double getPesoTotal() {
+		double pesoTot = 0;
+		for(Alimento a : alimentos) {
+			pesoTot = pesoTot + a.getPeso();
+		}
+		return pesoTot;
+	}
+	
+	public double getCaloriasTotal() {
+		double caloriasTot = 0;
+		for(Alimento a : alimentos) {
+			caloriasTot = caloriasTot + a.getCalorias()();
+		}
+		return caloriasTot;
+	}
+}

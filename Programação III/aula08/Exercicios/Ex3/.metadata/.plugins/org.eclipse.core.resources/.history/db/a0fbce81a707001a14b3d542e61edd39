@@ -1,0 +1,9 @@
+package aula08Ex3;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class QuizList {
+	private HashMap<String,ArrayList<Question>> list = new HashMap<>(); 
+	private int numQuestions = 0;
+}

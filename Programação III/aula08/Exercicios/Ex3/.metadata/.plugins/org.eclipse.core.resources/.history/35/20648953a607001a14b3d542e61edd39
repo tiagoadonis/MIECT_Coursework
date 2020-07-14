@@ -1,0 +1,15 @@
+package aula08Ex3;
+
+public class Question {
+	private String imageName;
+	private String question;
+	private String[] options;
+	private int difficulty;
+	
+	public Question(String imageName, String question, String[] options, int difficulty) {
+		this.imageName = imageName;
+		this.question = question;
+		this.options = options;
+		this.difficulty = difficulty;
+	}
+}

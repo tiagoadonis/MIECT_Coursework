@@ -1,0 +1,17 @@
+package aula03Ex1;
+
+public class Bolseiro extends Estudante{
+	private int bolsa;
+	
+	public Bolseiro(String nome, String cc, Data nascimento, Data inscricao) {
+		super (nome, cc, nascimento, inscricao);
+	}
+	
+	public int getBolsa() {
+		return this.bolsa;
+	}
+	
+	public void setBolsa(int bolsa) {
+		this.bolsa = bolsa;
+	}
+}

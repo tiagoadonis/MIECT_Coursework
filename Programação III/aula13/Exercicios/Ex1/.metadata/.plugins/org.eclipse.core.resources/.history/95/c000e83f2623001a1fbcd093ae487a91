@@ -1,0 +1,6 @@
+package aula13Ex1;
+import java.util.*;
+
+public class Pais2 extends Regiao{
+
+}

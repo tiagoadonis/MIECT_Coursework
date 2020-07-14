@@ -1,0 +1,56 @@
+package aula10Ex2;
+
+import java.util.*;
+import java.lang.Comparable;
+
+public class BinarySearchTree<T extends Comparable<? super T>>implements Iterable<T> {
+	// o elemento do tipo T deve ser comparável para efectuar pesquisas
+	// mas como pode herdar a implementação de compareTo() é mais correcto
+	// usar <? super T>
+	private static class BSTNode<T> {
+		T element;
+		BSTNode<T> left;
+		BSTNode<T> right;
+	
+		BSTNode(T theElement) {
+			element = theElement;
+			left = right = null;
+		}
+	}
+	
+	private BSTNode<T> root;
+	private int numNodes;
+	
+	public BinarySearchTree() {
+		root = null;
+		numNodes = 0;
+	}
+	
+	public void insert(T value) {
+		if( contains(value) ) {
+			System.err.println("ERROR! A árvore já contem o valo dado!");
+		}
+		root = insert(value, root);
+	}
+	
+	private BSTNode<T> insert(T value, BSTNode<T> root) {
+		// árvore vazia
+		if(root == null) {
+			numNodes++;
+			return new BSTNode<T>(value);
+		}
+		int i = value.compareTo(root.element);
+	}
+	
+	public void remove(T value) {
+		root = remove(value, root);
+	}
+
+	public boolean contains(T value) {
+		return valueOf(find(value, root)) != null;
+	}
+	
+	public Iterator<T> iterator() {
+		...
+	}
+}

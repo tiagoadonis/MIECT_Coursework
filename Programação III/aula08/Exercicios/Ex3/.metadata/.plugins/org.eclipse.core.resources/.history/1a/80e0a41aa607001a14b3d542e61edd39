@@ -1,0 +1,6 @@
+package aula08Ex3;
+
+public class Question {
+	private String imageName;
+	private String question;
+}

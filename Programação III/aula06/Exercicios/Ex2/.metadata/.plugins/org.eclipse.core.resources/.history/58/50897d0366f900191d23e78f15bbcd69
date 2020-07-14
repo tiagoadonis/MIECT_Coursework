@@ -1,0 +1,9 @@
+package aula06Ex2;
+import java.util.*;
+import java.util.function.Predicate;
+
+public class ListsProcess{
+	public static List<T> filter (List<T> lista, Predicate<T> filtro){
+		
+	}
+}

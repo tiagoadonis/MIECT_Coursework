@@ -1,0 +1,6 @@
+package aula01Ex2;
+
+public class Pessoa {
+	private String nome;
+	private String cc;
+}

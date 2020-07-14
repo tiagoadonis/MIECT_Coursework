@@ -1,0 +1,12 @@
+package aula06Ex1;
+import java.util.*;
+
+public class Prato {
+	private String nome;
+	private ArrayList<Alimento> alimentos;
+	
+	public Prato(String nome) {
+		this.nome = nome;
+		alimentos = new ArrayList<>();
+	}
+}

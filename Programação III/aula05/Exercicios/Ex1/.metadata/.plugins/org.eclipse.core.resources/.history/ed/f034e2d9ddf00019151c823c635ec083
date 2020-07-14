@@ -1,0 +1,13 @@
+package aula05Ex1;
+
+public class UtilCompare {
+	
+	
+	public Figura findMax(Figura[] listaFig) {
+		
+	}
+	
+	public void  sortArray(Figura[] listaFig) {
+		
+	}
+}

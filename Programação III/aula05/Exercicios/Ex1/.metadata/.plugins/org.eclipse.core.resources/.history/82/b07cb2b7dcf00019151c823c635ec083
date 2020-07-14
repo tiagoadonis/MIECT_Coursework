@@ -1,0 +1,22 @@
+package aula05Ex1;
+
+abstract class Figura implements Comparable<Figura>{
+	private Ponto oCentro;
+	
+	public Figura(Ponto centro) {
+		this.oCentro = centro;
+	}
+	
+	public Ponto getCentro() {
+		return this.oCentro;
+	}
+	
+	public abstract double area();
+	
+	
+	// negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object
+	@Override
+	public int compareTo(Figura f) {
+		
+	}
+}

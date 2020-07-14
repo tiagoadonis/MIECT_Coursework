@@ -1,0 +1,34 @@
+package aula04Ex3;
+
+import java.util.*;
+@SuppressWarnings("all")
+public class Cliente extends Pessoa{
+	private static int current_numSocio = 1;
+	private int numSocio;
+	private List<Video> historicoVideos;
+	private int req = 0;
+	
+	public Cliente (String nome, int cc, Data nascimento) {
+		super(nome,cc,nascimento);
+		this.numSocio = current_numSocio++;
+		this.historicoVideos = new ArrayList<>();
+	}
+	
+	public int getNumSocio() {
+		return this.numSocio;
+	}
+	
+	public List<Video> getHistoricoVideos(){
+		return this.historicoVideos;
+	}
+	
+	public int getReq() {
+		return this.req;
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+" Num.Socio: "+getNumSocio();
+	}
+}
+

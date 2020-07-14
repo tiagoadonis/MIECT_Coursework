@@ -1,0 +1,54 @@
+package aula03Ex2;
+
+public class Circulo extends Figura{
+	private double raio;
+	private double area;
+	private double perimetro;
+
+	/*public Circulo (Ponto x, double r){
+		super(x);
+		this.raio = r;
+		this.area = Math.PI * Math.pow(raio,2);
+		this.perimetro = 2 * Math.PI * raio;
+	}*/
+	
+	public Circulo (double r) {
+		super(new Ponto());
+		this.raio = r;
+	}
+	
+	public Circulo(double x, double y, double r){
+		super(new Ponto(x,y));
+		raio = r;
+		this.area = Math.PI * Math.pow(raio,2);
+		this.perimetro = 2 * Math.PI * raio;
+	}
+	
+	public Circulo(Circulo a) {
+		super(a.getCentro());
+		this.raio = a.getRaio(); 
+		this.area = Math.PI * Math.pow(raio,2);
+		this.perimetro = 2 * Math.PI * raio;
+	}
+	
+	public boolean equals(Circulo b) {
+		if ( super(getCentro()) == b.getCentro()) {
+			
+		}
+	}
+	
+	public double getRaio(){
+		return this.raio;
+	}
+	public double area(){
+		return this.area;
+	}
+	public double perimetro(){
+		return this.perimetro;
+	}
+	
+	public String toString(){
+		String descricao = ("Figura: Círculo\nRaio: "+raio+"\nCentro: "+centro+"\nÁrea: "+area+"\nPerímetro: "+perimetro);
+		return descricao;
+	}
+}

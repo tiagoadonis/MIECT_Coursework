@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="aula05Ex2.Automovel"/>
+    <fullyQualifiedTypeName name="aula05Ex2.Policia"/>
+    <fullyQualifiedTypeName name="aula05Ex2.Color"/>
+    <fullyQualifiedTypeName name="aula05Ex2.BicicletaPolicia"/>
+    <fullyQualifiedTypeName name="aula05Ex2.MotoPolicia"/>
+    <fullyQualifiedTypeName name="aula05Ex2.CarroPolicia"/>
+    <fullyQualifiedTypeName name="aula05Ex2.Combustivel"/>
+    <fullyQualifiedTypeName name="aula05Ex2.Servico"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
+    <fullyQualifiedTypeName name="aula05Ex2.Veiculo"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="aula05Ex2.UtilCompare"/>
+</qualifiedTypeNameHistroy>

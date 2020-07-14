@@ -1,0 +1,15 @@
+package aula06Ex1;
+
+public enum DiaSemana {
+	Segunda(0), Terça(1), Quarta(2), Quinta(3), Sexta(4), Sábado(5), Domingo(6);
+	
+	private int index;
+	
+	private DiaSemana(int i) {
+		this.index = i;
+	}
+	
+	public static DiaSeamana rand() {
+		int rand = (int) (Math.random() *);
+	}
+}

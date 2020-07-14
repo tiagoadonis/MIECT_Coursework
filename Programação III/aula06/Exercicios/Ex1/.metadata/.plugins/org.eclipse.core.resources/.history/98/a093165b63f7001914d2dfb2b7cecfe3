@@ -1,0 +1,29 @@
+package aula06Ex1;
+import static java.lang.System.*;
+import java.util.*;
+
+public class Ementa {
+	private String nome;
+	private String local;
+	private static HashMap<DiaSemana, LinkedList<Prato>> listaPratos = new HashMap<>();
+	
+	public Ementa(String nome, String local) {
+		this.nome = nome;
+		this.local = local;
+	}
+	
+	public static void addPrato(Prato prato, DiaSemana dia) {
+		if (listaPratos.containsKey(dia)) { 	
+			listaPratos.get(dia).add(prato);
+		}
+		else {
+			LinkedList<Prato> tmp = new LinkedList<>();
+			listaPratos.put(dia, prato);
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Ementa " +this.nome+ ", local=" +this.local;
+	}
+}

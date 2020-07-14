@@ -1,0 +1,36 @@
+package aula09Ex3;
+import java.util.*;
+
+public class VectorPessoas {
+	private List<Pessoa> listaPessoas = new ArrayList<>();
+	
+	public boolean addPessoa(Pessoa p) {
+		return listaPessoas.add(p);
+	}
+	
+	public boolean removePessoa(Pessoa p) {
+		return listaPessoas.remove(p);
+	}
+	
+	public int totalPessoas() {
+		return this.listaPessoas.size();
+	}
+	
+	public class VectorIterator implements Iterator {
+	
+		@Override
+		public boolean hasNext() {
+			return false;
+		}
+	
+		@Override
+		public Object next() {
+			return null;
+		}
+	
+		@Override
+		public void remove() {
+			
+		}	
+	}
+}

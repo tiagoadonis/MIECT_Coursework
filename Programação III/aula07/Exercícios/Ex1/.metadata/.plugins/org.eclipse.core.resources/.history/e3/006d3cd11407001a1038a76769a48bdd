@@ -1,0 +1,55 @@
+package aula07Ex1;
+import java.io.*;
+import java.time.LocalTime;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException{
+		Aeroporto aveiroAirlines = new Aeroporto("companhias.txt", "voos.txt");
+		PrintStream console = System.out; 
+		// Print da tabela
+		System.out.println(aveiroAirlines.toString());
+		
+		// save the table to a file named "Infopublico.txt"
+		PrintStream fileInfo = new PrintStream(new File("Infopublico.txt"));
+		System.setOut(fileInfo);
+		System.out.println(aveiroAirlines.toString());
+		System.setOut(console);
+		
+		// Print tabela com atrasos médios
+		HashMap<String, LocalTime> atrasos = aveiroAirlines.calcAtrasosMedios();
+		String[] keys1 = new String[atrasos.size()];
+		atrasos.keySet().toArray(keys1);
+		for(int i = 0; i < keys1.length; i++) {
+			System.out.println(keys1[i]+" -> "+atrasos.get(keys1[i])+" (atraso médio)");
+		}
+		System.out.println();
+		
+		// Print tabela com os voos para as cidades
+		HashMap<String, Integer> cidades = aveiroAirlines.voosPorCidade();
+		String[] keys2 = new String[cidades.size()];
+		cidades.keySet().toArray(keys2);
+		for(int j = 0; j < keys2.length; j++) {
+			System.out.println(keys2[j]+" -> "+cidades.get(keys2[j])+" (voos)");
+		}
+		
+		// save the table (flights - city) to a file named "Infopublico.txt"
+		PrintStream fileCitys = new PrintStream(new File("cidades.txt"));
+		System.setOut(fileCitys);
+		for(int j = 0; j < keys2.length; j++) {
+			System.out.println(keys2[j]+" -> "+cidades.get(keys2[j])+" (voos)");
+		}
+		System.setOut(console);
+		System.out.println();
+		
+		
+		
+		// save InfoPublico to a binary file
+		/*PrintStream fileBin = new PrintStream(new File("Infopublico.bin"));
+		System.setOut(fileBin);
+		System.out.println(aveiroAirlines.toString());
+		System.setOut(console);*/
+	}
+
+}

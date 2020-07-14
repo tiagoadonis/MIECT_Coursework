@@ -1,0 +1,13 @@
+package aula04Ex1;
+
+public class Professor extends Pessoa{
+	private int nfunc;
+	private static int NFUNC = ;
+	private Data dataAdmissao;
+	
+	public Professor(String nome, int cc, Data nascimento) {
+		super(nome, cc, nascimento);
+		this.nfunc = NFUNC++;
+		this.dataAdmissao = new Data();
+	}
+}

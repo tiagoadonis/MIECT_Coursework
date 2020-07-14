@@ -1,0 +1,3 @@
+Menos de 20
+Entre 20 e 40: abcdefghijkl
+Mais de 40: abcdefghijklmnopqrstuvxz 12345678910 

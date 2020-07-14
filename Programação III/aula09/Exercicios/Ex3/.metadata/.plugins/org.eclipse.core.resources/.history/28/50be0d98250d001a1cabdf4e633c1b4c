@@ -1,0 +1,78 @@
+package aula09Ex3;
+import java.util.*;
+
+public class VectorPessoas {
+	private List<Pessoa> listaPessoas = new ArrayList<>();
+	
+	public boolean addPessoa(Pessoa p) {
+		return listaPessoas.add(p);
+	}
+	
+	public boolean removePessoa(Pessoa p) {
+		return listaPessoas.remove(p);
+	}
+	
+	public int totalPessoas() {
+		return this.listaPessoas.size();
+	}
+	
+	public Iterator iterator() {
+		VectorIterator iterator = new VectorIterator();
+		return iterator;
+	}
+	
+	private class VectorIterator implements Iterator {
+		
+		private int index;
+		
+		public VectorIterator() {
+			this.index = 0;
+		}
+		
+		@Override
+		public boolean hasNext() {
+			return index < totalPessoas();
+		}
+	
+		@Override
+		public Object next() {
+			if (hasNext()) {
+				Object obj = listaPessoas.get(index);
+				this.index++;
+				return obj;
+			}
+			throw new IndexOutOfBoundsException("ERROR!! The list doesn't have more elements!!");
+		}
+	
+		@Override
+		public void remove() {
+			listaPessoas.remove(index);
+		}	
+	}
+	
+	private class VectorBFIterator implements BFIterator{
+
+		
+		
+		@Override
+		public boolean hasPrevious() {
+			return false;
+		}
+
+		@Override
+		public Object previous() {
+			return null;
+		}
+
+		@Override
+		public boolean hasNext() {
+			return false;
+		}
+
+		@Override
+		public Object next() {
+			return null;
+		}
+		
+	}
+}

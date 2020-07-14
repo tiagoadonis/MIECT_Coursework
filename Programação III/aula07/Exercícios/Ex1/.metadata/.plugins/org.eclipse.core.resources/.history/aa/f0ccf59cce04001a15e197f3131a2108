@@ -1,0 +1,19 @@
+package aula07Ex1;
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException{
+		Aeroporto aveiroAirlines = new Aeroporto("companhias.txt", "voos.txt");
+		System.out.println(aveiroAirlines.toString());
+		
+		// save the table to a file named "Infopublico.txt"
+		PrintStream o = new PrintStream(new File("Infopublico.txt"));
+		System.setOut(o);
+		System.out.println(aveiroAirlines.toString());
+		
+		HashMap<String, Double> atrasos = aveiroAirlines.calcAtrasoMedio();
+	}
+
+}

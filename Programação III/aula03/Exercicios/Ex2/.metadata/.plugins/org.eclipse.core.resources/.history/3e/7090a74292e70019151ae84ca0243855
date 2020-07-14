@@ -1,0 +1,37 @@
+package aula03Ex2;
+
+public class Rectangulo extends Figura{
+	private double largura;
+	private double comprimento;
+	private double area;
+	private double perimetro;
+	
+	public Rectangulo (double l, double c){
+		super(new Ponto());
+		this.largura = l;
+		this.comprimento = c;
+		this.area = largura * comprimento;
+		this.perimetro = (2 * largura)+(2 * comprimento);
+	}
+	
+	public Rectangulo(double x, double y, double l, double c) {
+		super(new Ponto(x,y));
+		this.largura = l;
+		this.comprimento = c;
+		this.area = largura * comprimento;
+		this.perimetro = (2 * largura)+(2 * comprimento);
+	}
+	
+	public double largura(){
+		return largura;
+	}
+	public double comprimento(){
+		return comprimento;
+	}
+	public double area(){
+		return area;
+	}
+	public double perimetro(){
+		return perimetro;
+	}
+}

@@ -1,0 +1,24 @@
+package aula03Ex03;
+
+public class Veiculo {
+	private Condutor condutor;
+	private Carta cartaNecessaria;
+	private final int lotacao; 
+	private final double cilindrada;
+	private final double potencia;
+	private final double pesoBruto;
+	
+	public Veiculo(Condutor c, Carta carta, int lot, double cil, double pot, double peso) {
+		this.condutor = c;
+		this.cartaNecessaria = carta;
+		this.lotacao = lot;
+		this.cilindrada = cil;
+		this.potencia = pot;
+		this.pesoBruto = peso;
+	}
+	
+	public boolean cartaValidaCondutor() { 
+		return cartaNecessaria.equals(condutor.getCarta());
+	}
+	
+}

@@ -1,0 +1,49 @@
+package aula08_ex2;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.tree.*;
+
+public class BMPViewerApp {
+	
+	public BMPViewerApp() {
+		JFrame frame = new JFrame("BMPViwer");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(1280, 720);
+		
+		// Barra de navegação
+		File fileRoot = new File(System.getProperty("user.home"));
+		DefaultTreeModel treeModel = new DefaultTreeModel(buildDirectoryTree(fileRoot,".Bmp"));
+		JTree navigator = new JTree(treeModel);
+		navigator.addTreeSelectionListener(new TreeSelectionListener() {
+			public void valueChanged(TreeSelectionEvent e) {
+				DefaultMutableTreeNode node = (DefaultMutableTreeNode) navigator.getLastSelectedPathComponent();
+				File imageFile = (File)node.getUserObject();
+				if(!imageFile.isFile()) {
+					return;
+				}
+				Bitmap bmp = new Bitmap(imageFile);
+				Bitmap bitmapImage = bmp;
+				setImage(bmp);
+			}
+		});
+		navigator.setSize(200, 240);
+		navigator.setBackground(new Color(255,255,255));
+		colapseAllRows(navigator);
+		
+		// Butões
+		JButton flipHButton = new JButton("Flip Horizontal");
+		flipHButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(bitmapImage == null) return;
+				bitmapImage = Bitmap.flipHorizontal(bitmapImage);
+				setImage(bitmapImage);
+				SwingUtilities.updateComponentTreeUI(frame);
+			}
+		}
+	}
+}

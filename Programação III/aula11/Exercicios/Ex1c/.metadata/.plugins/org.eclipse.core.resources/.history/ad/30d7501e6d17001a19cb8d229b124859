@@ -1,0 +1,32 @@
+package aula11Ex1c;
+
+import java.util.*;
+import java.io.*;
+
+public class CountWords {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		Map<String, Integer> dict = new HashMap<>();
+		System.out.print("Nome do ficheiro de texto: ");
+		String fileName = sc.nextLine();
+		
+		File f = new File(fileName);
+		Scanner scf = new Scanner(f);
+		
+		while(scf.hasNextLine()) {
+			String line = scf.nextLine();
+			String[] words = line.split(" ");
+			for (int i = 0; i < words.length; i++) {
+				if (dict.containsKey(words[i])) {
+					
+				}else {
+					dict.put(words[i], 1);
+				}
+			}
+		}
+		scf.close();
+	}
+
+}

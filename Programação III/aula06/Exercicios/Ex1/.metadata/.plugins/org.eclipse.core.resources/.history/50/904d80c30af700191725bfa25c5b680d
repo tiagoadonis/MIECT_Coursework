@@ -1,0 +1,10 @@
+package aula06Ex1;
+
+public class Legume extends Alimento implements AlimentoVegetariano{
+	private String nome;
+	
+	public Legume(String nome, double prot, double cal, double peso) {
+		super(prot,cal,peso);
+		this.nome = nome;
+	}
+}

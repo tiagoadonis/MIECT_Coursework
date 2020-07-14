@@ -1,0 +1,154 @@
+package aula07Ex1;
+import java.util.*;
+import java.io.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class Aeroporto {
+	private List<Voo> voos = new ArrayList<>();
+	private HashMap<String, String> companhias = new HashMap<>(); 	// Sigla, nome da companhia
+	
+	public Aeroporto(String companhiasFile, String voosFile) throws IOException{
+		// Companias
+		File f1 = new File(companhiasFile);
+		Scanner scf1 = new Scanner(f1);
+		scf1.nextLine();
+		while(scf1.hasNextLine()) {
+			String[] data1 = scf1.nextLine().split("\t");
+			companhias.put(data1[0], data1[1]);
+		}
+		scf1.close();
+		
+		// Voos
+		File f2 = new File(voosFile);
+		Scanner scf2 = new Scanner(f2);
+		scf2.nextLine();
+		while(scf2.hasNextLine()){
+			String[] data2 = scf2.nextLine().split("\t");
+			// tem atraso
+			if (data2.length == 4) {
+				LocalTime partida = LocalTime.parse(data2[0], DateTimeFormatter.ofPattern("HH:mm"));
+				String nome = data2[1];
+				String companhia = getCompanhia(data2[1]);
+				String origem = data2[2];
+				LocalTime atraso = LocalTime.parse(data2[3], DateTimeFormatter.ofPattern("HH:mm"));
+				Object obj = companhia;
+				if(obj != null) {
+					Voo v = new Voo(partida, nome, companhia, origem, atraso);
+					voos.add(v);
+				}
+			}
+			// não tem atraso
+			else if(data2.length == 3) {
+				LocalTime partida = LocalTime.parse(data2[0], DateTimeFormatter.ofPattern("HH:mm"));
+				String nome = data2[1];
+				String companhia = getCompanhia(data2[1]);
+				String origem = data2[2];
+				Object obj = companhia;
+				if(obj != null) {
+					Voo v = new Voo(partida, nome, companhia, origem, LocalTime.of(00, 00));
+					voos.add(v);
+				}
+			}
+		}
+		scf2.close();
+	}
+	
+	public String getCompanhia(String nome) {
+		String[] data = nome.split(" ");
+		String str = "";
+		// tem espaço no meio
+		if (data.length == 2) {
+			str = companhias.get(data[0]);
+		}
+		// não tem espaço no meio
+		else if(data.length == 1) {
+			String charOne = String.valueOf(data[0].charAt(0));
+			String charTwo = String.valueOf(data[0].charAt(1));
+			String subString = charOne + charTwo;
+			str = companhias.get(subString);
+		}
+		return str;
+	}
+	
+	public LocalTime calcChegada(LocalTime partida, LocalTime atraso) {
+		LocalTime chegada = partida.plusHours(atraso.getHour());
+		chegada = partida.plusMinutes(atraso.getMinute());
+		return chegada;
+	}
+	
+	/*public HashMap<String, Double> calcAtrasoMedio() {
+		HashMap<String, Double> atrasosCompanhias = new HashMap<>();
+		String[] keys = new String[companhias.size()];
+		companhias.keySet().toArray(keys);
+		for (int i = 0; i < keys.length; i++) {
+			atrasosCompanhias.put(keys[i], 0.0);
+		}
+		for (int i = 0; i < keys.length; i++) {
+			int tot = 0;
+			for (Voo v : voos) {
+				if (v.getCompanhia().equals(keys[i])) {
+					double value = atrasosCompanhias.get(keys[i]);
+					value = value + Double.parseDouble(v.getAtraso().toString());
+					atrasosCompanhias.put(keys[i], value);
+					tot++;
+				}
+			}
+			atrasosCompanhias.put(keys[i], atrasosCompanhias.get(keys[i])/tot);
+		}
+		return atrasosCompanhias;
+	}*/
+	
+	public /*HashMap<String, LocalTime>*/ void calcAtrasosMedios(){
+		HashMap<String, LocalTime> atrasosCompanhias = new HashMap<>();
+		// keys do map companhias
+		String[] keys = new String[companhias.size()];
+		companhias.keySet().toArray(keys);
+		for(String str : keys) {
+			// inicializa map atrasosCompanhias com keys (nome da companhia) e value 00:00
+			atrasosCompanhias.put(companhias.get(str), LocalTime.of(00, 00));
+		}
+		// keys do map atrasosCompanhias
+		String[] keys2 = new String[atrasosCompanhias.size()];
+		atrasosCompanhias.keySet().toArray(keys2);
+		
+		System.out.println("Calculo dos atrasos totais");
+		for(String key : keys2) {
+			int tot = 0;
+			for(Voo v : voos) {
+				if(v.getCompanhia().equals(key)) {
+					LocalTime value = atrasosCompanhias.get(key);
+					value = value.plusHours(v.getAtraso().getHour());
+					value = value.plusMinutes(v.getAtraso().getMinute());
+					atrasosCompanhias.put(key, value);
+					tot++;
+				}
+			}
+			int hour = atrasosCompanhias.get(key).getHour();
+			int min = atrasosCompanhias.get(key).getMinute();
+			int atrasoMedio = (int)((hour * 60) + min) / tot;
+			int hours = atrasoMedio / 60;
+			int mins = atrasoMedio % 60;
+			atrasosCompanhias.put(key, LocalTime.of(hours, mins););
+			System.out.println(key+" -> "+atrasosCompanhias.get(key));
+		}
+		//return atrasosCompanhias;
+	}
+
+	@Override
+	public String toString() {
+		String head = "Hora\tVoo\t\tCompanhia\t\tOrigem\t\t\tAtraso\tObs\n";
+		String str = "";
+		for(Voo a : voos) {
+			String tmp = "";
+			LocalTime chegada = calcChegada(a.getPartida(), a.getAtraso());
+			str = str + a.toString(); 
+			if (!a.getAtraso().toString().equals("00:00")) {
+				tmp = "\tPrevisto: "+chegada.toString();
+			}
+			str = str + tmp+"\n";
+		}
+		return head + str;
+	}
+}
+

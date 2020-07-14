@@ -1,0 +1,12 @@
+package aula02Ex2;
+import java.util.*;
+public class WSSolver {
+
+	public static void main(String[] args) {
+		
+		
+		Game game = new Game();
+		
+	}
+
+}

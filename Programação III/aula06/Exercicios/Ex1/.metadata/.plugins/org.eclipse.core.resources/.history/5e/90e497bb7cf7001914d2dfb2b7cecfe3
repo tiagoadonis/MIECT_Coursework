@@ -1,0 +1,92 @@
+package aula06Ex1;
+import java.util.*;
+
+public class Prato {
+	private String nome;
+	private final ArrayList<Alimento> alimentos;
+	private double calorias = 0;
+	
+	public Prato(String nome) {
+		this.nome = nome;
+		alimentos = new ArrayList<>();
+	}
+	
+	public double getPesoTotal() {
+		double pesoTot = 0;
+		for(Alimento a : alimentos) {
+			pesoTot = pesoTot + a.getPeso();
+		}
+		return pesoTot;
+	}
+	
+	public double getCaloriasTotal() {
+		double caloriasTot = 0;
+		for(Alimento a : alimentos) {
+			caloriasTot = caloriasTot + a.getCalorias();
+		}
+		this.calorias = caloriasTot;
+		return caloriasTot;
+	}
+	
+	public double getProteinaTotal() {
+		double proteinaTot = 0;
+		for(Alimento a : alimentos) {
+			proteinaTot = proteinaTot + a.getProteinas();
+		}
+		return proteinaTot;
+	}
+	
+	public boolean addIngrediente(Alimento a){
+		if (a == null) {
+			return false;
+		}
+		alimentos.add(a);
+		calorias = calorias + a.getCalorias();
+		return true;
+	}
+	
+	public int numIngredientes() {
+		return this.alimentos.size();
+	}
+
+	@Override
+	public String toString() {
+		return "Prato "+this.nome+" composto por "+this.numIngredientes()+" ingredientes";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((alimentos == null) ? 0 : alimentos.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(calorias);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Prato other = (Prato) obj;
+		if (alimentos == null) {
+			if (other.alimentos != null)
+				return false;
+		} else if (!alimentos.equals(other.alimentos))
+			return false;
+		if (Double.doubleToLongBits(calorias) != Double.doubleToLongBits(other.calorias))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+}

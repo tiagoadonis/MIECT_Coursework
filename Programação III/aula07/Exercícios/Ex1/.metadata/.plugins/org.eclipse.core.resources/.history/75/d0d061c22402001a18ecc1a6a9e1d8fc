@@ -1,0 +1,15 @@
+package aula07Ex1;
+import java.io.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException{
+		Voo v1 = new Voo("test.txt");
+		/*System.out.println("Hora	Voo		Origem		Atraso");
+		String f = v1.toString();
+		System.out.println(f);*/
+	}
+
+}

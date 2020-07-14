@@ -1,0 +1,15 @@
+package aula13Ex1;
+
+public class Factory {
+	public static Localidade factory(String tipo) {
+		if(tipo.equalsIgnoreCase("Cidade")) {
+			
+		}
+		if (tipo.equalsIgnoreCase("Aldeia")) {
+			
+		}
+		if (tipo.equalsIgnoreCase("Vila")) {
+			
+		}
+	}
+}

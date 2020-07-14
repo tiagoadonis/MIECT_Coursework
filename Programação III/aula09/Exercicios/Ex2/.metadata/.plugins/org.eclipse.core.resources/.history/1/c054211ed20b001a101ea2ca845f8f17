@@ -1,0 +1,13 @@
+package aula09Ex2;
+
+public class GeladoSimples extends Gelado{
+	private String sabor;
+	
+	public GeladoSimples(String sabor) {
+		this.sabor = sabor;
+	}
+	
+	public void base(int numBolas) {
+		System.out.println(numBolas+" bolas de gelado de "+this.sabor);
+	}
+}

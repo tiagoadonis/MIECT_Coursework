@@ -1,0 +1,16 @@
+package aula09Ex2;
+
+public class Topping extends GeladoDecorator{
+
+	private String sabor;
+	
+	public Topping(Gelado g, String sabor) {
+		super(g);
+		this.sabor = sabor;
+	}
+	
+	public void base(int numBolas) {
+		System.out.println(numBolas+" de gelado de "++"com "+this.sabor);
+	}
+	
+}

@@ -1,0 +1,8 @@
+package aula06Ex1;
+
+public class Test {
+	public static void main(String[] args) {
+		Ementa ementa = new Ementa("Especial Caloiro", "Snack da UA");
+		Prato[] pratos = new Prato[10];
+	
+}

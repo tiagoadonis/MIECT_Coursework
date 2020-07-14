@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\Universidade\MIECT\3º Ano\1º Semestre\Cadeiras\Programação III\Práticas\aula05\Exercicios\Ex1\.metadata\.plugins\org.eclipse.jdt.core
+3322540599.index
+113558702.index

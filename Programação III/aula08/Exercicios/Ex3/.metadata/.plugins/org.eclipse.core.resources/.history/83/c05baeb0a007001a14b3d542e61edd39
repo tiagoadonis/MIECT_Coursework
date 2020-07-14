@@ -1,0 +1,13 @@
+package aula08Ex3;
+
+
+public class GameWindow {
+	public GameWindow() {
+		createGameWindow();
+	}
+	
+	public void createGameWindow() {
+		JFrame frame = new JFrame("Quem quer ser Milionário");
+		frame.setVisible(true);
+	}
+}

@@ -1,0 +1,11 @@
+package aula09Ex2;
+
+public class Copo extends GeladoDecorator{
+	
+	private Gelado gelado;
+	
+	public Copo(Gelado gelado) {
+		this.gelado = gelado;
+	}
+	
+}

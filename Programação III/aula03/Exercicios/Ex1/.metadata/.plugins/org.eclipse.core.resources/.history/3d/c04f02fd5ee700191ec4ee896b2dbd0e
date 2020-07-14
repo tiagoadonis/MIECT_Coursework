@@ -1,0 +1,5 @@
+package aula03Ex1;
+
+public class Estudante extends Pessoa{
+	
+}

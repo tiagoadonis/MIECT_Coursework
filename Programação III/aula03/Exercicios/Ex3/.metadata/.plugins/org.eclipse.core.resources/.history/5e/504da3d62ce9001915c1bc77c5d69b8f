@@ -1,0 +1,22 @@
+package aula03Ex03;
+import static java.lang.System.*; 
+
+public class Test {
+
+	public static void main(String[] args) throws Exception{
+		// Cartas de Condução
+		Carta cartaMotas = new Carta("A");
+		Carta cartaLigeiros = new Carta("B");
+		Carta cartaMercadorias = new Carta("C");
+		Carta cartaPassageiros = new Carta("D");
+		
+		//Datas de nascimento
+		Data data1 = new Data(1,2,1998);
+		Data data2 = new Data(19,4,1997);
+		Data data3 = new Data(25,9,1970);
+		Data data4 = new Data(19,4,1990);
+		Data data5 = new Data(9,8,1998);
+		
+	}
+
+}

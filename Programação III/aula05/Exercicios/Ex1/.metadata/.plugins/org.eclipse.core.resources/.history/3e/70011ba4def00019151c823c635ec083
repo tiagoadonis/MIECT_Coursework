@@ -1,0 +1,18 @@
+package aula05Ex1;
+
+public class UtilCompare {
+		
+	public Figura findMax(Figura[] listaFig) {
+		int maxArea = 0;
+		for (Figura f : listaFig) {
+			if (f.area() > maxArea) {
+				
+			}
+		}
+		return listaFig[maxIndex];
+	}
+	
+	public void  sortArray(Figura[] listaFig) {
+		
+	}
+}

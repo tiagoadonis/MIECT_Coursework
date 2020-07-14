@@ -1,0 +1,9 @@
+package aula03Ex03;
+
+public class PesadoPassageiros extends Veiculo{
+	private final String[] paragens = {"Viseu", "Aveiro", "Albergaria-a-Velha", "Celorico", "Guarda", "Mangualde"};
+	
+	public PesadoPassageiros(Condutor c) {
+		
+	}
+}

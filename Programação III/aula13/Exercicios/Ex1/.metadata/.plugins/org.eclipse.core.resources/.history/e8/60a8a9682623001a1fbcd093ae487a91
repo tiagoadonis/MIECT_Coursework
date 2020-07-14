@@ -1,0 +1,59 @@
+package aula13Ex1;
+import java.util.*;
+
+public class Pais2 extends Regiao{
+	private Localidade capital;
+	private ArrayList<Regiao> regioes;
+	
+	public Pais (String name, Localidade cap) {
+		// trow IllegalArgumentException
+		/*if(!cap.getTipo().equals("Cidade")) {
+			throw new IllegalArgumentException("Capital Inválida");
+		}*/
+
+		this.capital = cap;
+		this.regioes = new ArrayList<>();
+	}
+	
+	public Pais (String name) {
+		super.setNome(name);
+		super.setPopulacao(0);
+		this.capital = null;
+		this.regioes = new ArrayList<>();
+	}
+	
+	public void addRegiao(Regiao r) { 
+		if ( !(r.getNome().equals(this.capital.getNome())) ) {
+			if (!this.regioes.contains(r)) {
+				this.regioes.add(r);
+			}
+		}
+	}
+	
+	//------para debug 
+	public ArrayList<Regiao> getRegioes(){
+		return this.regioes;
+	}
+	
+	public void totPopulacao() {
+		int pop = 0;
+		for(Regiao tmp : this.regioes) {
+			pop = pop + tmp.getPopulacao();
+		}
+		super.setPopulacao(pop);
+	}
+	
+	@Override
+	public String toString() {
+		totPopulacao();
+		String str = "Pais: "+super.getNome()+", População: "+super.getPopulacao()+" (Capital: ";
+		String cap = "";
+		if (this.capital != null) {
+			cap = cap + "Cidade " + this.capital.getNome() +", populacao "+this.capital.getPopulacao()+")";
+		}
+		else {
+			cap = cap + "*Indefinida*)";
+		}
+		return str + cap;
+	}
+}

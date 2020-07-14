@@ -1,0 +1,11 @@
+package aula05Ex3;
+import java.util.*;
+
+public class Test {
+
+	public static void main(String[] args) {
+		String line = "#Maria João Sousa#9123454#12/05/1989";
+		
+	}
+
+}

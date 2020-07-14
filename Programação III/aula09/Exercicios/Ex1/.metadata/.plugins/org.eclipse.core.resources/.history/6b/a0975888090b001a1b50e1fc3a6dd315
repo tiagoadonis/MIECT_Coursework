@@ -1,0 +1,47 @@
+package aula09Ex1;
+
+import java.io.*;
+import java.util.*;
+
+public class ScannerAbeirense implements Iterator<String>, Closeable{
+	
+	private Scanner read;
+	
+	public ScannerAbeirense(File f) {
+		try {
+			this.read = new Scanner (f);
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public ScannerAbeirense(String str) {
+		this.read = new Scanner(str);
+	}
+	
+	public void nextline() {
+		read.nextLine();
+	}
+	
+	// Closeable
+	@Override
+	public void close() throws IOException {
+		this.read.close();
+	}
+	
+	// Iterator
+	@Override
+	public boolean hasNext() {
+		return read.hasNext();
+	}
+
+	// Iterator
+	@Override
+	public String next() {
+		String str = read.next();
+		str = str.replaceAll("v","b");
+		str = str.replaceAll("V","B");
+		return str;
+	}
+
+}

@@ -1,0 +1,26 @@
+package aula13Ex1;
+
+public class Localidade {
+	private String nome;
+	private int populacao;
+	private TipoLocalidade tipo;
+	
+	public Localidade(String name, int pop, TipoLocalidade type) {
+		this.nome = name;
+		this.populacao = pop;
+		for (TipoLocalidade tmp : TipoLocalidade.values()) {
+			if (tmp.toString().equals(type.toString())) {
+				this.tipo = type;
+			}
+		}
+		assert this.tipo != null : "Error!! TipoLocalidade inválido!!";
+	}
+	
+	public String getTipo() {
+		return this.tipo.name();
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
+}

@@ -1,0 +1,10 @@
+package aula13Ex1;
+
+public class Regiao {
+	private String nome;
+	private int populacao;
+	
+	public setNome(String n) {
+		this.nome = n;
+	}
+}

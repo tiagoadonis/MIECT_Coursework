@@ -1,0 +1,25 @@
+package aula11Ex2;
+import java.util.*;
+
+public class TestsMain {
+	public static void main(String[] args) {
+		List<Figura> list = new ArrayList<>();
+		list.add(new Circulo(2));
+		list.add(new Circulo(4));
+		list.add(new Quadrado(2));
+		list.add(new Rectangulo(2,3));
+		list.add(new Rectangulo(4,5));
+		
+		System.out.println("Maior figura: "+maiorFiguraJ7(list));
+	}
+	
+	private static Figura maiorFiguraJ7(List<Figura> figs) {
+		Figura maior = figs.get(0);
+		for (Figura f : figs) {
+			if (f.compareTo(maior) >= 1) {
+				maior = f;
+			}
+		}
+		return maior;
+	}
+}

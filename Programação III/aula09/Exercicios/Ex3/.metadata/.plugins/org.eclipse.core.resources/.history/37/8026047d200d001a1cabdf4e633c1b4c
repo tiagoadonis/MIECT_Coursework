@@ -1,0 +1,11 @@
+package aula09Ex3;
+import java.util.*;
+
+public class ListaPessoasIterator {
+	private List<Pessoa> listaPessoas = new LinkedList<>();
+	
+	public boolean addPessoa(Pessoa p) {
+		
+	}
+	
+}

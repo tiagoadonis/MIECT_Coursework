@@ -1,0 +1,10 @@
+package aula03Ex03;
+
+public class Ligeiro extends Veiculo{
+	private String cor;
+	
+	public Ligeiro(Condutor c, String cor) {
+		super(c, new Carta("A"), 5, 30, 400, 4000);
+		
+	}
+}

@@ -1,0 +1,21 @@
+package aula11Ex1b;
+import java.util.*;
+import java.io.*;
+
+public class ReadFile {
+
+static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) throws IOException {
+		System.out.println("Introduza o nome do ficheiro: ");
+		String fileName = sc.nextLine();
+		
+		File f = new File(fileName);
+		Scanner scf = new Scanner(f);
+		
+		while(scf.hasNextLine()) {
+			String line = scf.nextLine();
+		}
+	}
+
+}

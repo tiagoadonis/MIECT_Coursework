@@ -1,0 +1,6 @@
+package aula13Ex1;
+
+public class Região {
+	private String nome;
+	private int populacao;
+}

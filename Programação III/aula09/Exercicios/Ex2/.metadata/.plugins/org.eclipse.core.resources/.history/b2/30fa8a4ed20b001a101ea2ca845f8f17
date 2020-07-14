@@ -1,0 +1,9 @@
+package aula09Ex2;
+
+public class Copo implements Gelado{
+	
+	@Override
+	public void base(int NumBolas) {
+		
+	}
+}

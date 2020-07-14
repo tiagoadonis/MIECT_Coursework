@@ -1,0 +1,10 @@
+package aula03Ex03;
+
+public class Motociclo extends Veiculo{
+	private boolean atrelado;
+	
+	public Motociclo(Condutor c, boolean atrelado) {
+		super(c, new Carta("C")
+		this.atrelado = atrelado;
+	}
+}

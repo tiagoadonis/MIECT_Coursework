@@ -1,0 +1,25 @@
+package aula07Ex1;
+import java.util.*;
+import java.io.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class Aeroporto {
+	private List<Voo> voos = new ArrayList<>();
+	
+	public Aeroporto(String voosFile, String companhiasFile) throws IOException{
+		// Voos
+		File f = new File(voosFile);
+		Scanner scf = new Scanner(f);
+		scf.nextLine();
+		while(scf.hasNextLine()){
+			String[] data = scf.nextLine().split("\t");
+			// tem atraso
+			if (data.length == 4) {
+				LocalTime partida = LocalTime.parse(data[0], DateTimeFormatter.ofPattern("HH:mm")),
+				
+				Voo v = new Voo();
+			}
+		}
+	}
+}

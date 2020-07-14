@@ -1,0 +1,30 @@
+package aula07Ex1;
+import java.io.*;
+import java.util.*;
+
+public class Companhia {
+	private HashMap<String, String> companies;
+	private String companyName;
+	
+	public Companhia(String fileName) throws IOException{
+		File f = new File(fileName);
+		Scanner scf = new Scanner(f);
+		scf.nextLine();
+		while(scf.hasNextLine()) {
+			String[] data = scf.nextLine().split("/t");
+			this.companies.put(data[0], data[1]);
+		}
+		scf.close();
+	}
+	
+	public String companyName(String name) {
+		String[] data = name.split(" ");
+		String str = "";
+		if (data.length == 2) {		// tem espaço no meio
+			str = companies.get(data[0]);
+		}else if(data.length == 1) {
+			
+		}
+		return str;
+	}
+}

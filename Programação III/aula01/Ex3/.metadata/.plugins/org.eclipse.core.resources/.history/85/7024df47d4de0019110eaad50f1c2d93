@@ -1,0 +1,35 @@
+package aula01Ex3;
+
+public class Rectangulo {
+	private double largura;
+	private double comprimento;
+	private double area;
+	private double perimetro;
+	
+	public Rectangulo (double l, double c){
+		largura = l;
+		comprimento = c;
+		area = largura * comprimento;
+		perimetro = (2 * largura)+(2 * comprimento);
+	}
+	
+	
+	public double getLargura(){
+		return largura;
+	}
+	public double getComprimento(){
+		return comprimento;
+	}
+	public double getArea(){
+		return area;
+	}
+	public double getPerimetro(){
+		return perimetro;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Figura: Rectângulo\nÁrea: "+area+"\nPerímetro: "+perimetro);;
+	}
+}

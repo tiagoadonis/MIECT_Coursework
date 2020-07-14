@@ -1,0 +1,13 @@
+package aula11Ex2;
+
+public class TestsMain {
+	private static Figura maiorFiguraJ7(List<Figura> figs) {
+		Figura maior = figs.get(0);
+		for (Figura f : figs) {
+			if (f.compareTo(maior) >= 1) {
+				maior = f;
+			}
+		}
+		return maior;
+	}
+}

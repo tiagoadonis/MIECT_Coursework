@@ -1,0 +1,33 @@
+package aula06Ex1;
+import static java.lang.System.*;
+import java.util.*;
+
+public class Ementa {
+	private String nome;
+	private String local;
+	private static HashMap<DiaSemana, ArrayList<Prato>> listaPratos = new HashMap<>();
+	
+	public Ementa(String nome, String local) {
+		this.nome = nome;
+		this.local = local;
+	}
+	
+	public static void addPrato(Prato prato, DiaSemana dia) {
+		if (listaPratos.containsKey(dia)) { 	
+			if (listaPratos.get(dia).equals(prato)) {
+				out.print("ERROR!! Prato já existe");
+			}
+			else {
+				listaPratos.get(dia).add(prato);
+			}
+		}
+		else {		
+			listaPratos.put(dia, prato);
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Ementa " +this.nome+ ", local=" +this.local;
+	}
+}

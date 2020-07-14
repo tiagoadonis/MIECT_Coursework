@@ -1,0 +1,12 @@
+package aula07Ex1;
+import java.io.*;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException{
+		Aeroporto aveiroAirlines = new Aeroporto("companhias.txt", "voos.txt");
+		System.out.println(aveiroAirlines.toString());
+		aveiroAirlines.writeToFile("Infopublico.txt");
+	}
+
+}

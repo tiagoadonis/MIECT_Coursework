@@ -1,0 +1,56 @@
+package aula03Ex03;
+import static java.lang.System.*; 
+
+public class Test {
+
+	public static void main(String[] args) throws Exception{
+		//Condutores
+		Condutor condutorMota = new Condutor("Manuel", 14785467, new Data(1,2,1998), new Carta("A"));
+		Condutor condutorLigeiro = new Condutor("Miguel", 14345487, new Data(19,4,1997), new Carta("B"));
+		Condutor condutorMercadoria = new Condutor("Ana", 14725347, new Data(25,9,1970), new Carta("C"));
+		Condutor condutorPassageiro = new Condutor("Maria", 16786354, new Data(19,4,1990), new Carta("D"));
+		
+		//Pessoas 
+		Pessoa passageiro1 = new Pessoa("Joao", 19895334, new Data(19,4,1997));
+		Pessoa passageiro2 = new Pessoa("Mariana", 19795334, new Data(1,2,1998));
+		Pessoa passageiro3 = new Pessoa("Margarida", 19700334, new Data(25,9,1970));
+		Pessoa passageiro4 = new Pessoa("Jose", 197795334, new Data(19,4,1997));
+		Pessoa passageiro5 = new Pessoa("Joana", 19795334, new Data(1,2,1998));
+		
+		//Veiculos
+		Veiculo veiculo = new Veiculo(condutorMota, new Carta("B"), 5, 125.0, 11.0, 3000.0);
+		Motociclo motaSemAtrelado = new Motociclo(condutorMota);
+		Motociclo motaComAtrelado = new Motociclo(condutorMota, true);
+		Ligeiro carroAzul = new Ligeiro(condutorLigeiro, "AZUL");
+		Ligeiro carroComCondutorIlegal = new Ligeiro(condutorMota, "VERMELHO");
+		PesadoMercadorias camiaoMercadoria = new PesadoMercadorias(condutorMercadoria);
+		PesadoPassageiros autocarro = new PesadoPassageiros(condutorPassageiro);
+		
+		
+		out.println("O veículo é conduzido por "+veiculo.getCondutor().getNome());
+		out.println(veiculo.toString());
+		out.println("");
+		
+		out.println("A mota sem atrelado é conduzida por "+motaSemAtrelado.getCondutor().getNome());
+		out.println(motaSemAtrelado.toString());
+		out.println("");
+		
+		out.println("A mota com atrelado é conduzida por "+motaComAtrelado.getCondutor().getNome());
+		out.println(motaComAtrelado.toString());
+		out.println("");
+		
+		out.println("O carro de cor "+ carroAzul.getCor() + " é conduzido por "+carroAzul.getCondutor().getNome());
+		out.println(carroAzul.toString());
+		out.println("");
+		
+		out.println("O carro com condutor ilegal de cor "+ carroComCondutorIlegal.getCor() + 
+				    " é conduzido por "+carroComCondutorIlegal.getCondutor().getNome());
+		out.println("O condutor tem a carta apropriada: "+(carroComCondutorIlegal.cartaValidaCondutor()?"Sim":"Não")); 
+		carroComCondutorIlegal.mudarCondutor(condutorLigeiro);
+		out.println("O condutor tem a carta apropriada: "+(carroComCondutorIlegal.cartaValidaCondutor()?"Sim":"Não")); 
+		out.println("");
+		
+		out.println("O camião de mercadoria é conduzido por "+camiaoMercadoria.condutor().nome());
+	}
+
+}
