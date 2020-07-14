@@ -1,0 +1,22 @@
+package bloco1Ex2;
+import java.util.*;
+
+public class Ex2 {
+	
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		while(true) {
+			Stack<Double> operandsStack = new Stack<>();
+			Queue<String> operationsStack = new LinkedList<String>();
+			System.out.println("Reverse Polish Notation Calculator: \n");
+			try {
+				
+			}catch(Exception e) {
+				System.err.println();
+			}
+		}
+
+	}
+
+}

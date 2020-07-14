@@ -1,0 +1,16 @@
+package bloco1Ex5;
+import java.util.*;
+
+public class Ex5 {
+
+static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		HashMap<String, Double> var = new HashMap<>();
+		
+		while(sc.hasNextLine()) {
+			System.out.println("");
+		}
+	}
+
+}

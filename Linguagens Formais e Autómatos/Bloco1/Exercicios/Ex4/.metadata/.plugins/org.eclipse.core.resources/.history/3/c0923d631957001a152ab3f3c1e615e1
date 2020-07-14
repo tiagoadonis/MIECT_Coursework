@@ -1,0 +1,28 @@
+package bloco1Ex4;
+import java.util.*;
+import java.io.*;
+
+public class Ex4 {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		HashMap<String, String> dict = new HashMap<>();
+		
+		File f = new File("numbers.txt");
+		Scanner scf = new Scanner(f);
+
+		while(scf.hasNextLine()) {
+			String[] line = scf.nextLine().split("-");
+			dict.put(line[1].trim(), line[0].trim());
+		}
+		
+		System.out.print("Numbers: ");
+		String[] line = sc.nextLine().split("[ -]");
+		
+		for(String str: line) {
+			System.out.println(str);
+		}
+		
+	}
+}

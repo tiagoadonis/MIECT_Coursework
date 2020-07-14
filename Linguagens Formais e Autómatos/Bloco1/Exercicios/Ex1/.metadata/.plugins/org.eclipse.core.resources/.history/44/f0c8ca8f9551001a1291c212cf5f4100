@@ -1,0 +1,33 @@
+package bloco1Ex1;
+import java.util.*;
+
+public class Ex1 {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) {
+		System.out.print("Expressão: ");
+		String[] line = sc.nextLine().split("\n ");
+		double num1 = Double.parseDouble(line[0]);
+		String op = line[1];
+		double num2 = Double.parseDouble(line[2]);
+		double res = 0;
+		switch (op) {
+			case "+":
+				res = num1 + num2;
+				break;
+			case "-":
+				res = num1 - num2;
+				break;
+			case "*":
+				res = num1 * num2;
+				break;
+			case "/":
+				res = num1 / num2;
+				break;
+			default:
+				System.err.println("ERROR!! Invalid operation symbol!");
+		}
+	}
+
+}

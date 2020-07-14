@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/home/tiagoadonis/Desktop/Universidade/3_ano/LFA/Praticas/Bloco1/Ex3/.metadata/.plugins/org.eclipse.jdt.core
+637652894.index
+646308851.index

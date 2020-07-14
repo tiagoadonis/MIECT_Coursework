@@ -1,0 +1,17 @@
+package bloco1Ex4;
+import java.util.*;
+import java.io.*;
+
+public class Ex4 {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		HashMap<String, String> dict = new HashMap<>();
+		
+		File f = new File("numbers.txt");
+		Scanner scf = new Scanner(f);
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package bloco1Ex1;
+import java.util.*;
+
+public class Ex1 {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

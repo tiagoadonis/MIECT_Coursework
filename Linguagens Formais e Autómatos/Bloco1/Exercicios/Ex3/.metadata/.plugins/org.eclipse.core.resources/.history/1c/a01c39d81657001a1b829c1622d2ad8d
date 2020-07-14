@@ -1,0 +1,49 @@
+//package bloco1Ex3;
+import java.util.*;
+import java.io.*;
+
+public class Ex3 {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		
+		HashMap<String, Integer> dict = new HashMap<>();	// key = String
+		
+		File f = new File("numbers.txt");
+		Scanner scf = new Scanner(f);
+		
+		while(scf.hasNextLine()) {
+			String[] line = scf.nextLine().split("-");
+			int n = 0;
+			try {
+				n = Integer.parseInt(line[0]);
+				System.out.println(n);
+			}catch(Exception e) {
+				//System.err.println("Catch!");
+				dict.put(line[1].trim(), n);
+			}
+		}
+		
+		System.out.print("A list of number: ");
+		String lineNumbers = sc.nextLine();
+		String[] numbers = lineNumbers.split(" ");
+		
+		String[] keys = new String[dict.size()];
+		dict.keySet().toArray(keys);
+		
+		System.out.println("KEYS:");
+		for (String str : keys) {
+			System.out.print(str+" ");
+		}
+		System.out.println();
+		
+		for (String str : numbers) {
+			System.out.println(str);
+			if(dict.containsKey(str)) {
+				System.out.println(dict.get(str)+" ");
+			}
+		}
+	}
+
+}

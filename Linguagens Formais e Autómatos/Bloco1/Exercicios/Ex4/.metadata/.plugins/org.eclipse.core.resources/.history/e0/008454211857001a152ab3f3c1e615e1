@@ -1,0 +1,15 @@
+package bloco1Ex4;
+import java.util.*;
+import java.io.*;
+
+public class Ex4 {
+
+static Sacnner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		File f = new File("numbers.txt");
+		
+
+	}
+
+}

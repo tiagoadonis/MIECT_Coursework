@@ -1,0 +1,48 @@
+package bloco1Ex4;
+import java.util.*;
+import java.io.*;
+
+public class Ex4 {
+
+static Scanner sc = new Scanner (System.in);
+	
+	public static void main(String[] args) throws IOException{
+		HashMap<String, String> dict = new HashMap<>(); 
+		
+		File f = new File("numbers.txt");
+		Scanner scf = new Scanner(f);
+
+		int cnt = 0;
+		
+		while(scf.hasNextLine()) {
+			String[] line = scf.nextLine().split("-");
+			dict.put(line[1].trim(), line[0].trim());
+		}
+		
+		System.out.print("Numbers: ");
+		String[] line = sc.nextLine().split("[ -]");
+		
+		for(int i = 0; i < line.length; i++) {
+			//System.out.println(line[i]);
+			if(line[i].equals("hundred")) {
+				cnt = cnt + (Integer.parseInt(dict.get(line[i-1])) * 100); 
+			}
+			else if(line[i].equals("thousand")) {
+				cnt = cnt + (Integer.parseInt(dict.get(line[i-1])) * 1000);
+			}
+			else if(line[i].equals("million")) {
+				cnt = cnt + (Integer.parseInt(dict.get(line[i-1])) * 1000000);
+			}
+			else {
+				if (dict.containsKey(line[i])) {
+					cnt = cnt + Integer.parseInt(dict.get(line[i]));
+				}
+			}
+		}
+		
+		for(String str : line) {	
+			
+		}
+		System.out.println(" -> "+cnt);
+	}
+}

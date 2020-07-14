@@ -1,0 +1,65 @@
+package bloco1Ex5;
+import java.util.*;
+
+public class Ex5 {
+
+private static Scanner sc;
+private static HashMap<String, Double> var;
+private static List<String> operations;
+
+	static {
+		operations = new LinkedList<>();
+		operations.add("+");
+		operations.add("-");
+		operations.add("*");
+		operations.add("/");
+	}
+
+	public static void main(String[] args) {
+		sc = new Scanner(System.in);
+		var = new HashMap<>();
+		
+		while(sc.hasNextLine()) {
+			System.out.println("Resultado: "+processLine(sc.nextLine()));
+		}
+	}
+	
+	public static double processLine(String line) {
+		Stack<Double> operands = new Stack<>();
+		
+		// split pelos espaços em branco com uma ou mais ocorrências
+		String[] elems = line.split("\\s+");
+		
+		for (int i = 0; i < elems.length; i++) {
+			String elem = elems[i];
+			// se for um número
+			if (elem.matches("\\d+")) {
+				operands.push(Double.parseDouble(elem));
+			}
+			// se for uma operação
+			else if(operations.contains(elem)) {
+				if (operands.size() < 1)  {
+					System.err.println("ERROR: Two operands missing!");
+					System.exit(1);
+				}
+				double operand1 = processLine(elems[i + 1]);
+				double operand2 = operands.pop();
+				
+				try {
+					operands.push(calculator(operand2, operand1, elem));
+					return operands.peek();
+				} catch (IllegalArgumentException e) {
+					System.err.println("ERROR!");
+					System.exit(1);
+				}
+			}
+			// variaveis
+			else {
+				if () {
+					
+				}
+			}
+		}
+	}
+
+}
