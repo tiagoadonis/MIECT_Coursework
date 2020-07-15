@@ -4,7 +4,7 @@
 
 In this repository there's some coursework developed for Computers and Telematics Engineering course at the University of Aveiro.
 
-<p>You can find work to some subjects, like:
+You can find some pratical guides resolutions from some subjects, like:
 
 - Formal Languages and Automata Theory (LFA)
 - Programation I (P1)
