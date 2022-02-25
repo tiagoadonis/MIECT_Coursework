@@ -11,3 +11,4 @@ You can find some pratical guides resolutions from some subjects, like:
 - Programation II (P2)
 - Programation III (P3)
 - Computers Architecture I (AC-1)
+- Information and Coding (IC)
