@@ -1,0 +1,161 @@
+\hypertarget{classCircularBuffer}{}\doxysection{Circular\+Buffer Class Reference}
+\label{classCircularBuffer}\index{CircularBuffer@{CircularBuffer}}
+
+
+Circular Buffer used for saving the context. It always inserts new chars in a circular fashion, and reads it\textquotesingle{}s content the same way.  
+
+
+
+
+{\ttfamily \#include $<$Circular\+Buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCircularBuffer_a8849e18b35e8d144a59906268812f204}{Circular\+Buffer}} (int \mbox{\hyperlink{classCircularBuffer_a7a7d84c020ab0d9adf9ece1c1e774d37}{size}})
+\begin{DoxyCompactList}\small\item\em Construct a new Circular Buffer object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircularBuffer_a0f05d815b2cc7cc5e8983b144d65558c}{put\+Char}} (char character)
+\begin{DoxyCompactList}\small\item\em Inserts a Char type onto the buffer\textquotesingle{}s tail. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircularBuffer_a59eaa07643919c06e404cc8ec1079b61}{reset\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Resets the buffer positional counters. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classCircularBuffer_ac13379d2598d248e4bb60e3fe3285388}{get\+Last}} ()
+\begin{DoxyCompactList}\small\item\em Returns the last character added to the circular buffer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCircularBuffer_a38665710288d2f8db0495e213d80c9d9}{read\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Read the content of the buffer, starting from the last place read, so that it reads in a circular fashion. It\textquotesingle{}s usefull because we don\textquotesingle{}t want read the buffer always from the start, since we are interested in getting the context (wich are the last characters up to the one inserted) later on. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCircularBuffer_a8ee093572ae237c6223c1a1b5f751c51}{buffer\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ char\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classCircularBuffer_a6b13ee21d20d0e3708d0ed563b7ebefd}{data}}
+\item 
+int \mbox{\hyperlink{classCircularBuffer_ad91542066f4637ffe093cbd781f65c0f}{head}} = 0
+\item 
+int \mbox{\hyperlink{classCircularBuffer_ae7f01dec04c4e1334dd8867519ac38b3}{tail}} = 0
+\item 
+int \mbox{\hyperlink{classCircularBuffer_a7a7d84c020ab0d9adf9ece1c1e774d37}{size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Circular Buffer used for saving the context. It always inserts new chars in a circular fashion, and reads it\textquotesingle{}s content the same way. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCircularBuffer_a8849e18b35e8d144a59906268812f204}\label{classCircularBuffer_a8849e18b35e8d144a59906268812f204}} 
+\index{CircularBuffer@{CircularBuffer}!CircularBuffer@{CircularBuffer}}
+\index{CircularBuffer@{CircularBuffer}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{CircularBuffer()}{CircularBuffer()}}
+{\footnotesize\ttfamily Circular\+Buffer\+::\+Circular\+Buffer (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Circular Buffer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & of the buffer to be allocated. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCircularBuffer_a8ee093572ae237c6223c1a1b5f751c51}\label{classCircularBuffer_a8ee093572ae237c6223c1a1b5f751c51}} 
+\index{CircularBuffer@{CircularBuffer}!bufferSize@{bufferSize}}
+\index{bufferSize@{bufferSize}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{bufferSize()}{bufferSize()}}
+{\footnotesize\ttfamily int Circular\+Buffer\+::buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the buffer size. 
+
+\begin{DoxyReturn}{Returns}
+int Buffer size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircularBuffer_ac13379d2598d248e4bb60e3fe3285388}\label{classCircularBuffer_ac13379d2598d248e4bb60e3fe3285388}} 
+\index{CircularBuffer@{CircularBuffer}!getLast@{getLast}}
+\index{getLast@{getLast}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{getLast()}{getLast()}}
+{\footnotesize\ttfamily char Circular\+Buffer\+::get\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the last character added to the circular buffer. 
+
+\begin{DoxyReturn}{Returns}
+char 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircularBuffer_a0f05d815b2cc7cc5e8983b144d65558c}\label{classCircularBuffer_a0f05d815b2cc7cc5e8983b144d65558c}} 
+\index{CircularBuffer@{CircularBuffer}!putChar@{putChar}}
+\index{putChar@{putChar}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{putChar()}{putChar()}}
+{\footnotesize\ttfamily void Circular\+Buffer\+::put\+Char (\begin{DoxyParamCaption}\item[{char}]{character }\end{DoxyParamCaption})}
+
+
+
+Inserts a Char type onto the buffer\textquotesingle{}s tail. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & to be inserted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircularBuffer_a38665710288d2f8db0495e213d80c9d9}\label{classCircularBuffer_a38665710288d2f8db0495e213d80c9d9}} 
+\index{CircularBuffer@{CircularBuffer}!readBuffer@{readBuffer}}
+\index{readBuffer@{readBuffer}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{readBuffer()}{readBuffer()}}
+{\footnotesize\ttfamily std\+::string Circular\+Buffer\+::read\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the content of the buffer, starting from the last place read, so that it reads in a circular fashion. It\textquotesingle{}s usefull because we don\textquotesingle{}t want read the buffer always from the start, since we are interested in getting the context (wich are the last characters up to the one inserted) later on. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircularBuffer_a59eaa07643919c06e404cc8ec1079b61}\label{classCircularBuffer_a59eaa07643919c06e404cc8ec1079b61}} 
+\index{CircularBuffer@{CircularBuffer}!resetBuffer@{resetBuffer}}
+\index{resetBuffer@{resetBuffer}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{resetBuffer()}{resetBuffer()}}
+{\footnotesize\ttfamily void Circular\+Buffer\+::reset\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the buffer positional counters. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCircularBuffer_a6b13ee21d20d0e3708d0ed563b7ebefd}\label{classCircularBuffer_a6b13ee21d20d0e3708d0ed563b7ebefd}} 
+\index{CircularBuffer@{CircularBuffer}!data@{data}}
+\index{data@{data}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$char\mbox{[}$\,$\mbox{]}$>$ Circular\+Buffer\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+Array wich will store the data \mbox{\Hypertarget{classCircularBuffer_ad91542066f4637ffe093cbd781f65c0f}\label{classCircularBuffer_ad91542066f4637ffe093cbd781f65c0f}} 
+\index{CircularBuffer@{CircularBuffer}!head@{head}}
+\index{head@{head}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily int Circular\+Buffer\+::head = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Head of the buffer \mbox{\Hypertarget{classCircularBuffer_a7a7d84c020ab0d9adf9ece1c1e774d37}\label{classCircularBuffer_a7a7d84c020ab0d9adf9ece1c1e774d37}} 
+\index{CircularBuffer@{CircularBuffer}!size@{size}}
+\index{size@{size}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int Circular\+Buffer\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+Size of the buffer \mbox{\Hypertarget{classCircularBuffer_ae7f01dec04c4e1334dd8867519ac38b3}\label{classCircularBuffer_ae7f01dec04c4e1334dd8867519ac38b3}} 
+\index{CircularBuffer@{CircularBuffer}!tail@{tail}}
+\index{tail@{tail}!CircularBuffer@{CircularBuffer}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily int Circular\+Buffer\+::tail = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Tail of the buffer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Part\+A/Circular\+Buffer.\+h\item 
+Part\+A/Circular\+Buffer.\+cpp\end{DoxyCompactItemize}
